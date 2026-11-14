@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#eee9df" name="theme-color"/><title>Имя, легенда и звёзды — Sabrina / Birthday 19</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet"/><style>
+    :root{--paper:#eee9df;--ink:#171714;--muted:#6e6b63;--gold:#a28e63;--rule:#aaa394;--serif:'Cormorant Garamond',Georgia,serif;--margin:clamp(22px,4.5vw,70px)}
+    *{box-sizing:border-box}body,h1,h2,p,figure,blockquote{margin:0}html{scroll-behavior:smooth}body{background:#161615;color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}::selection{background:#d9c89a;color:#171714}
+    .sheet{max-width:1440px;margin:36px auto;background:var(--paper);padding:0 var(--margin);box-shadow:0 16px 80px #0003;position:relative;isolation:isolate}
+    .running-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:23px 0 19px;border-bottom:1px solid var(--ink)}
+    .micro{font-family:Arial,sans-serif;font-size:10px;line-height:1.5;letter-spacing:.17em;text-transform:uppercase}
+    .running-head .masthead{font-size:26px;font-weight:600;text-transform:uppercase;letter-spacing:-.045em;line-height:1}
+    .running-head> :last-child{text-align:right}.back-link{width:fit-content;padding:6px 0}.back-link span{display:inline-block;transition:transform .2s}.back-link:hover span{transform:translateX(-4px)}
+    .spread{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(30px,5vw,80px);padding-top:36px}
+    .story{min-width:0;padding-top:10px}.eyebrow{display:flex;align-items:center;gap:14px;color:var(--muted)}.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+    h1{font-size:clamp(76px,9vw,140px);font-weight:500;letter-spacing:-.075em;line-height:.79;margin:39px 0 27px}
+    h1 span{display:block}h1 .that{font-weight:400;font-style:italic;letter-spacing:-.075em;margin-left:26%;font-size:1.08em;line-height:.92}h1 .girl{letter-spacing:-.07em}
+    .identity{border-top:1px solid var(--ink);padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:32px}.identity h2{font-size:clamp(28px,3vw,43px);font-weight:500;letter-spacing:-.035em;line-height:1}.identity .micro{font-size:9px;white-space:nowrap;color:var(--muted)}
+    .standfirst{font-size:clamp(23px,2.35vw,32px);font-style:italic;line-height:1.16;letter-spacing:-.018em;margin:24px 0 28px;max-width:23ch}
+    .copy{display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--rule);padding-top:19px;font-size:19px;line-height:1.45;color:#45433e}.copy p{hyphens:auto}.copy p:first-child::first-letter{float:left;font-size:65px;line-height:.8;margin:6px 7px 0 0;color:var(--ink)}
+    .draft-note{display:block;font-family:Arial,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:25px 0 8px}
+    .portrait{position:relative;min-width:0;animation:appear 1s ease both}.photo-placeholder{position:relative;overflow:hidden;display:grid;place-items:center;aspect-ratio:4/5.4;background:#bbb5aa;color:#f0ece2;isolation:isolate}
+    .photo-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 8%,#ded9ccaa,transparent 50%),linear-gradient(120deg,#b4ae9e,#a29c8f 45%,#69665f);z-index:-2}
+    .photo-placeholder::after{content:'';position:absolute;width:75%;height:105%;left:36%;top:8%;background:linear-gradient(95deg,#37393305,#33352f99 45%,#d0cbb655);border-radius:50% 50% 0 0;transform:rotate(-24deg);filter:blur(7px);z-index:-1}
+    .photo-initial{font-size:clamp(230px,35vw,510px);font-style:italic;line-height:1;opacity:.8;transform:translate(-6%,-2%);font-weight:400;user-select:none}
+    .photo-corner{position:absolute;top:22px;left:22px;font-size:9px;letter-spacing:.2em}.photo-side{position:absolute;right:17px;top:50%;writing-mode:vertical-rl;font-size:9px;letter-spacing:.26em}
+    .photo-label{position:absolute;left:22px;right:22px;bottom:23px;border-top:1px solid #f0ece277;padding-top:12px;display:flex;justify-content:space-between;gap:12px;font-size:10px}.photo-label span:last-child{opacity:.7}
+    figcaption{display:flex;justify-content:space-between;gap:15px;font-size:14px;font-style:italic;line-height:1.3;color:var(--muted);padding-top:12px}figcaption span:last-child{font-size:10px;font-style:normal;letter-spacing:.1em;color:var(--ink)}
+    .portrait-footnote{border-top:1px solid var(--rule);padding-top:17px;margin-top:25px;display:flex;align-items:baseline;justify-content:space-between;gap:18px}.portrait-footnote p{font-size:25px;font-style:italic}.portrait-footnote .micro{font-size:9px;color:var(--muted)}
+    .quote-strip{display:grid;grid-template-columns:130px 1fr 160px;gap:32px;align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:32px 0;margin:45px 0 0}.quote-strip .micro{color:var(--muted)}
+    blockquote{font-size:clamp(29px,3.7vw,49px);line-height:1.04;font-style:italic;letter-spacing:-.035em;max-width:24ch}blockquote::before{content:'“';display:block;color:var(--gold);font-size:66px;line-height:.4;margin-bottom:12px}.quote-caption{margin-top:12px;font-size:12px;font-style:normal;color:var(--muted);line-height:1.4;letter-spacing:0}
+    .detail-photo{aspect-ratio:1.1;background:linear-gradient(140deg,#d6d0c2,#a8a18f);display:grid;place-items:center;position:relative;overflow:hidden}.detail-photo::before{content:'';width:60%;height:150%;border:1px solid #eee9df99;border-radius:50%;position:absolute;transform:rotate(45deg)}.detail-photo span{font-style:italic;font-size:35px;z-index:1;color:#eee9df}.detail-caption{margin-top:8px;font-size:11px;color:var(--muted);font-style:italic}
+    .page-footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:21px 0 25px}.folio{font-size:27px;font-style:italic;line-height:1}.next{text-align:right;justify-self:end;padding-block:8px}.next span{display:inline-block;margin-left:12px;transition:transform .2s}.next:hover span{transform:translateX(5px)}a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+    .story{animation:appear .8s ease both}.quote-strip{animation:appear 1s ease .15s both}@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @media(min-width:1500px){.sheet{margin-block:48px}}
+    @media(max-width:1050px){.sheet{margin:0 auto}.spread{gap:30px}.copy{grid-template-columns:1fr;gap:15px;font-size:18px}.portrait-footnote{display:block}.portrait-footnote p{margin-top:8px}.quote-strip{grid-template-columns:95px 1fr 120px;gap:24px}h1{font-size:clamp(73px,9.5vw,100px)}}
+    @media(max-width:700px){.running-head{grid-template-columns:1fr auto;gap:10px;padding-block:20px 15px}.running-head .masthead{justify-self:end;font-size:24px}.running-head> :last-child{display:none}.micro{font-size:9px;letter-spacing:.13em}.spread{grid-template-columns:1fr;gap:30px;padding-top:28px}.story{display:contents}.eyebrow{grid-row:1}h1{grid-row:2;font-size:clamp(90px,19vw,132px);margin:0;max-width:440px}h1 .that{margin-left:24%;line-height:.86}.identity{grid-row:3;margin:0;padding-top:17px}.identity h2{font-size:34px}.portrait{grid-row:4}.photo-placeholder{aspect-ratio:4/4.8}.photo-initial{font-size:clamp(290px,76vw,520px)}.standfirst{grid-row:5;font-size:28px;max-width:none;margin:0}.copy{grid-row:6;grid-template-columns:1fr 1fr;font-size:18px;gap:20px}.draft-note{grid-row:7;margin:-10px 0 0}.portrait-footnote{display:none}.quote-strip{grid-template-columns:1fr 90px;gap:24px;margin-top:32px;padding-block:25px}.quote-strip>.micro{grid-column:1/-1}blockquote{font-size:31px}.page-footer{grid-template-columns:1fr auto;gap:14px;padding-block:20px}.page-footer>.micro:first-child{display:none}.next{font-size:9px}.folio{font-size:25px}.detail-photo span{font-size:27px}}
+    @media(max-width:370px){.copy{grid-template-columns:1fr}.identity{align-items:start;flex-direction:column;gap:8px}.identity h2{font-size:32px}.quote-strip{grid-template-columns:1fr}.detail{display:none}h1{font-size:88px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+    @media print{body{background:var(--paper)}.sheet{margin:0;max-width:none;box-shadow:none}.back-link,.next{visibility:hidden}.story,.portrait,.quote-strip{animation:none}.photo-placeholder,.detail-photo{print-color-adjust:exact;-webkit-print-color-adjust:exact}a{color:var(--ink)}}
+  
+    :root{--wine:#682b37}
+    .chapter-top{display:flex;justify-content:space-between;gap:25px;padding-top:30px;color:var(--muted)}
+    .chapter-title{font-size:clamp(64px,9vw,132px);line-height:.86;letter-spacing:-.065em;font-weight:400;margin:28px 0 24px;max-width:12ch}
+    .chapter-title em{font-weight:400;color:var(--wine)}
+    .chapter-deck{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;border-bottom:1px solid var(--ink);padding-bottom:32px}.chapter-deck p:first-child{font-size:25px;line-height:1.2;max-width:33ch;font-style:italic}.chapter-deck .micro{text-align:right;color:var(--muted)}
+    .name-spread{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,80px);padding:48px 0}.name-art{min-width:0}.name-visual{aspect-ratio:4/4.7;background:#c5c4b7;position:relative;overflow:hidden;display:grid;place-items:center;isolation:isolate}.name-visual::before,.name-visual::after{content:'';position:absolute;border:1px solid #f7f1dc88;width:155%;height:95%;border-radius:50%;transform:rotate(-28deg);left:-20%;top:44%;z-index:-1}.name-visual::after{top:35%;left:-14%;border-width:28px;border-color:#e6e2cf33}.name-visual>i{font-size:clamp(160px,25vw,380px);font-weight:400;color:#f2eddf;line-height:1;letter-spacing:-.12em;transform:translateX(-7%)}.art-label{position:absolute;left:22px;bottom:22px;right:22px;border-top:1px solid #f2eddf88;padding-top:13px;color:#f2eddf}.art-top{position:absolute;left:22px;top:22px;color:#4c5047}
+    .name-story{min-width:0;padding-top:4px}.section-kicker{color:var(--muted);margin-bottom:18px}.name-heading{font-weight:400;font-size:clamp(49px,6vw,84px);line-height:.95;letter-spacing:-.055em;color:var(--wine)}.name-latin{font-size:26px;font-style:italic;margin-top:8px;color:var(--muted)}
+    .article-copy{font-size:21px;line-height:1.47;color:#45433e}.article-copy p+p{margin-top:16px}.name-story .article-copy{margin-top:24px}.dropcap::first-letter{float:left;color:var(--ink);font-size:68px;line-height:.82;padding:7px 8px 0 0}.cite{font-family:Arial,sans-serif;font-size:10px;vertical-align:super;white-space:nowrap;color:var(--wine);padding:2px}.cite:hover{text-decoration:underline}
+    .etymology{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:18px 0;margin:25px 0}.etymology div{text-align:center;font-size:23px;font-style:italic}.etymology small{font-size:9px;display:block;margin-top:4px;color:var(--muted);font-family:Arial,sans-serif;letter-spacing:.08em;font-style:normal}.etymology>span{color:var(--gold)}
+    .name-note{font-size:16px;line-height:1.4;color:var(--muted);font-style:italic}.cinema{border-top:1px solid var(--ink);padding:22px 0 30px;display:grid;grid-template-columns:110px 1fr 1fr;gap:32px;align-items:start}.cinema .year{font-size:49px;line-height:1;font-style:italic;color:var(--wine)}.cinema h3{font-size:32px;font-style:italic;font-weight:400;line-height:1.05;margin-bottom:10px}.cinema p{font-size:19px;line-height:1.4}.cinema .editor-note{font-size:17px;font-style:italic;color:var(--muted);border-left:1px solid var(--rule);padding-left:25px}
+    .zodiac{background:#191b1a;color:var(--paper);margin:18px calc(-1 * var(--margin)) 0;padding:42px var(--margin) 40px;position:relative;overflow:hidden}.zodiac-header{display:flex;justify-content:space-between;gap:20px;color:#bcb6a9;border-bottom:1px solid #eee9df44;padding-bottom:20px}.zodiac-main{display:grid;grid-template-columns:1fr 1.05fr;gap:65px;align-items:center;padding:36px 0 32px}.zodiac h2{font-size:clamp(56px,7vw,104px);font-weight:400;line-height:.9;letter-spacing:-.045em}.zodiac h2 em{display:block;font-size:.65em;color:#d9c89a;font-weight:400;margin-top:6px}.zodiac p.lead{font-size:25px;font-style:italic;line-height:1.25;margin:25px 0 18px}.zodiac .article-copy{color:#c8c4bb;font-size:20px}.zodiac .cite{color:#d9c89a}
+    .zodiac-seal{aspect-ratio:1;max-width:390px;width:100%;margin:auto;border:1px solid #d9c89a66;border-radius:50%;position:relative;display:grid;place-items:center;background:radial-gradient(circle,#d9c89a0c,transparent 67%)}.zodiac-seal::before{content:'';position:absolute;inset:16px;border:1px solid #d9c89a33;border-radius:50%}.seal-symbol{font-family:Georgia,'Segoe UI Symbol',serif;font-size:clamp(100px,15vw,195px);line-height:1;color:#d9c89a;padding-bottom:20px}.seal-top,.seal-bottom{position:absolute;left:0;right:0;text-align:center;color:#d9c89a;font-size:9px;letter-spacing:.24em}.seal-top{top:13%}.seal-bottom{bottom:13%}.star{position:absolute;color:#d9c89a;font-size:19px}.star.one{left:9%;top:45%}.star.two{right:9%;top:45%}
+    .zodiac-facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #eee9df44;border-bottom:1px solid #eee9df44}.zodiac-facts div{padding:20px 16px;border-right:1px solid #eee9df33}.zodiac-facts div:first-child{padding-left:0}.zodiac-facts div:last-child{border-right:0}.zodiac-facts dt{color:#c5bfae;font-size:9px}.zodiac-facts dd{margin:9px 0 0;font-size:25px;line-height:1.1;font-style:italic}.zodiac-facts dd small{display:block;font-size:15px;line-height:1.3;margin-top:4px;color:#c8c4bb}.astro-note{font-size:14px;line-height:1.4;color:#aca99f;max-width:80ch;margin-top:19px}
+    .afterword{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;padding:42px 0}.afterword h2{font-size:49px;font-style:italic;font-weight:400;line-height:.96;letter-spacing:-.03em;margin:15px 0 20px}.moodwords{font-size:24px;color:var(--wine);font-style:italic;border-top:1px solid var(--rule);padding-top:15px;margin-bottom:16px}.afterword .article-copy{font-size:20px}.date-feature{border-left:1px solid var(--rule);padding-left:40px}.date-numeral{font-size:135px;font-style:italic;font-weight:400;line-height:.9;letter-spacing:-.07em;color:var(--wine);margin:15px 0 0}.date-numeral span{font-size:37px;letter-spacing:0;margin-left:10px}.date-caption{font-size:24px;font-style:italic;margin:8px 0 20px}.birthday-note{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:15px 0}.birthday-note summary{font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}.birthday-note summary::-webkit-details-marker{display:none}.birthday-note summary::after{content:'+';color:var(--wine);font-size:22px}.birthday-note[open] summary::after{content:'−'}.birthday-note p{font-size:23px;font-style:italic;line-height:1.25;margin-top:17px;padding-bottom:5px}.birthday-note summary:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+    .sources{border-top:1px solid var(--ink);padding:20px 0;color:var(--muted)}.sources summary{cursor:pointer;font-size:10px}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;padding:20px 0 5px;list-style:none;margin:0;font-size:15px;line-height:1.4}.source-list a{text-decoration:underline;text-underline-offset:3px;color:var(--ink)}.source-list small{display:block;font-size:13px}.page-footer{border-top:1px solid var(--ink)}
+    @media(max-width:1000px){.zodiac-main{gap:30px}.article-copy{font-size:20px}.etymology div{font-size:20px}.cinema{grid-template-columns:85px 1fr;gap:25px}.cinema .editor-note{grid-column:2}.afterword{gap:35px}.date-feature{padding-left:28px}}
+    @media(max-width:700px){.chapter-top{padding-top:24px}.chapter-top .micro:last-child{display:none}.chapter-title{font-size:clamp(61px,12vw,90px);max-width:11ch;margin:25px 0}.chapter-deck{grid-template-columns:1fr;gap:18px}.chapter-deck .micro{text-align:left}.chapter-deck p:first-child{font-size:24px}.name-spread{grid-template-columns:1fr;padding:30px 0;gap:30px}.name-visual{aspect-ratio:4/3.5}.name-visual>i{font-size:60vw}.name-heading{font-size:64px}.article-copy{font-size:21px}.etymology div{font-size:24px}.cinema{grid-template-columns:70px 1fr;gap:20px;padding-bottom:24px}.cinema .year{font-size:37px}.cinema .editor-note{padding-left:16px}.zodiac{padding-top:28px}.zodiac-header{gap:10px}.zodiac-header .micro{font-size:8px}.zodiac-main{grid-template-columns:1fr;gap:25px;padding-block:30px}.zodiac h2{font-size:clamp(50px,10.5vw,70px)}.zodiac-seal{max-width:270px;grid-row:1}.seal-symbol{font-size:140px}.zodiac-facts{grid-template-columns:1fr 1fr}.zodiac-facts div{padding:18px 12px}.zodiac-facts div:nth-child(2){border-right:0}.zodiac-facts div:nth-child(-n+2){border-bottom:1px solid #eee9df33}.zodiac-facts div:nth-child(3){padding-left:0}.zodiac-facts dd{font-size:22px;overflow-wrap:anywhere}.afterword{grid-template-columns:1fr;gap:30px;padding-block:32px}.afterword h2{font-size:45px}.date-feature{border-left:0;border-top:1px solid var(--rule);padding:25px 0 0}.date-numeral{font-size:120px}.source-list{grid-template-columns:1fr}.chapter-title,.name-heading,.zodiac h2{overflow-wrap:normal}.page-footer{grid-template-columns:1fr auto 1fr}.page-footer>.micro:first-child{display:block;font-size:8px}.page-footer .next{font-size:8px}.page-footer .next span{margin-left:3px}}
+    @media(prefers-reduced-motion:no-preference){.chapter-title,.name-spread{animation:appear .9s ease both}}
+
+ .chapter-title{max-width:16ch;font-size:clamp(53px,8.3vw,119px)}
+ .birthday-calendar{padding:45px 0 42px}
+ .calendar-intro{border-bottom:1px solid var(--ink);padding-bottom:25px;margin-bottom:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px 35px;align-items:end}
+ .calendar-intro>.micro{grid-column:1/-1;color:var(--muted)}
+ .calendar-intro h2{font-size:clamp(52px,7vw,90px);font-weight:400;font-style:italic;line-height:.95;letter-spacing:-.05em}
+ .calendar-intro>p:last-child{font-size:22px;font-style:italic;line-height:1.3}
+ .calendar-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,70px);align-items:start}
+ .calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;width:100%}
+ .calendar-day{position:relative;aspect-ratio:1;border:1px solid transparent;border-radius:50%;background:transparent;color:var(--ink);font-family:var(--serif);font-size:clamp(21px,2.6vw,35px);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+ .calendar-day:hover{background:#d9c89a66;transform:translateY(-2px)}
+ .calendar-day.birthday{border-color:var(--wine);color:var(--wine)}
+ .calendar-day.birthday::after{content:'✧';position:absolute;right:0;top:-2px;font-size:14px;color:var(--wine);background:var(--paper)}
+ .calendar-day[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+ .calendar-day.birthday[aria-pressed="true"]{background:var(--wine);color:var(--paper)}
+ .calendar-day:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+ .calendar-result{min-height:285px;padding:20px 0 15px;border-top:1px solid var(--rule)}
+ .calendar-result>.micro{color:var(--muted)}
+ .calendar-result h3{font-size:clamp(31px,3.4vw,47px);line-height:1.04;font-style:italic;font-weight:400;letter-spacing:-.025em;margin:16px 0}
+ #calendar-result-copy p{font-size:21px;line-height:1.4;color:#45433e}
+ #calendar-result-copy p+p{margin-top:15px}
+ .calendar-result.is-special{border-top-color:var(--wine)}
+ .calendar-result.is-special h3,.calendar-result.is-special>.micro{color:var(--wine)}
+ .birthday-traits{font-style:italic;color:var(--wine)!important;font-size:25px!important}
+ @media(max-width:700px){.chapter-title{font-size:clamp(47px,10.4vw,72px);max-width:16ch}.cinema{grid-template-columns:70px 1fr!important}.calendar-intro{grid-template-columns:1fr;gap:15px}.calendar-intro>.micro{grid-column:auto}.calendar-layout{grid-template-columns:1fr;gap:24px}.calendar-result{min-height:180px}.calendar-day{font-size:27px}.birthday-calendar{padding-top:32px}}
+
+ /* Birthday burst: lightweight, local, and independent of external libraries. */
+ .birthday-confetti{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1000;contain:strict}
+ .confetti-piece{position:absolute;left:0;top:0;width:7px;height:12px;background:var(--confetti-color);border-radius:1px;will-change:transform,opacity}
+ .confetti-piece.sparkle{width:11px;height:11px;clip-path:polygon(50% 0,61% 37%,100% 50%,61% 63%,50% 100%,39% 63%,0 50%,39% 37%)}
+ @media(prefers-reduced-motion:reduce){.birthday-confetti{display:none}}
+ @media print{.birthday-confetti{display:none}}
+</style></head><body>
+<main class="sheet">
+<header class="running-head">
+<a class="back-link micro" href="page-1.html#contents"><span aria-hidden="true">←</span> К оглавлению</a>
+<p class="masthead">Birthday</p><p class="micro">Issue № 19 / Name &amp; stars</p>
+</header>
+<article aria-labelledby="chapter-title">
+<div class="chapter-top"><p class="micro">02 / Глава 1</p><p class="micro">Sabrina Medzitova · The birthday issue</p></div>
+<h1 class="chapter-title" id="chapter-title" lang="en">A name.<br/>A legend.<br/><em>A little stardust.</em></h1>
+<div class="chapter-deck"><p>Сабрина: имя с древней историей.<br/>Скорпион: глубина, страсть и притяжение.<br/></p><p class="micro">Sabrina / Scorpio<br/>A name. A sign. A story.</p></div>
+<section aria-labelledby="name-heading" class="name-spread">
+<figure class="name-art">
+<!-- Replace .name-visual with a portrait or a photograph of water. -->
+    <img src="name-photo.jpg" alt="Сабрина"
+         style="width:100%; aspect-ratio:4/4.7; object-fit:cover; display:block;">
+<figcaption><span>Sabrina Medzitova</span><span>01 / PLACEHOLDER</span></figcaption>
+</figure>
+<div class="name-story">
+<p class="section-kicker micro">01 / История имени</p><h2 class="name-heading" id="name-heading">Сабрина</h2><p class="name-latin">Sabrina — a name with a story</p>
+<div class="article-copy"><p class="dropcap">Имя Сабрина связывают с латинским названием реки Северн — Sabrina. В валлийском языке её называют Hafren, а в старых источниках встречается форма Habren. Корни этого названия уходят в кельтскую древность; его первоначальный смысл остаётся неизвестным.<a aria-label="Источник: история имени" class="cite" href="https://www.etymonline.com/word/Sabrina">[1]</a></p>
+<p>В литературной традиции Сабрина стала образом речной нимфы. Именно так её представил Джон Мильтон в «Комусе» (1634). Это мифологический образ, а не буквальный перевод имени.<a aria-label="Источник 1: Сабрина у Мильтона" class="cite" href="https://www.etymonline.com/word/Sabrina">[1]</a></p></div>
+<div aria-label="Связанные формы названия реки" class="etymology"><div>Hafren<small>ВАЛЛИЙСКАЯ ФОРМА</small></div><span aria-hidden="true">↔</span><div>Sabrina<small>ЛАТИНСКАЯ ФОРМА</small></div><span aria-hidden="true">↔</span><div>Severn<small>АНГЛИЙСКАЯ ФОРМА</small></div></div>
+</div>
+</section>
+<aside aria-label="Имя в кино" class="cinema" style="grid-template-columns:110px 1fr">
+<div><p class="micro">Cinema note</p><p class="year">1954</p></div>
+<div><h3>Звучит как название фильма.</h3><p>И это действительно так: «Сабрина» — романтическая комедия Билли Уайлдера 1954 года с Одри Хепбёрн, Хамфри Богартом и Уильямом Холденом.<a aria-label="Источник 2: фильм Сабрина в каталоге AFI" class="cite" href="https://catalog.afi.com/Film/51337-Sabrina/">[2]</a></p></div>
+</aside>
+<section aria-labelledby="zodiac-heading" class="zodiac">
+<header class="zodiac-header"><p class="micro">02 / Знак зодиака</p><p class="micro">The Scorpio edit · ♏︎</p></header>
+<div class="zodiac-main">
+<div><h2 id="zodiac-heading">Скорпион<em>Scorpio</em></h2><p class="lead">Глубина. Сосредоточенность.<br/>И немного тайны.</p><div class="article-copy"><p>В западной астрологии Скорпион — восьмой знак зодиака, водный и фиксированный. В традиционных описаниях его связывают с эмоциональной глубиной, настойчивостью и стремлением заглянуть под поверхность вещей.<a aria-label="Источник 3: Скорпион в астрологической традиции" class="cite" href="https://www.astrology.com/zodiac-signs/scorpio">[3]</a></p></div></div>
+<div aria-label="Декоративная эмблема знака Скорпион, не карта неба" class="zodiac-seal" role="img"><span class="seal-top micro">Water / Fixed / VIII</span><span aria-hidden="true" class="star one">✧</span><span aria-hidden="true" class="seal-symbol">♏︎</span><span aria-hidden="true" class="star two">✧</span><span class="seal-bottom micro">The Scorpio signature</span></div>
+</div>
+<dl class="zodiac-facts"><div><dt class="micro">Стихия</dt><dd>Вода</dd></div><div><dt class="micro">Качество</dt><dd>Фиксированный</dd></div><div><dt class="micro">Управители</dt><dd>Марс / Плутон<small>традиционный / современный</small></dd></div><div><dt class="micro">Период, примерно</dt><dd>23.10 — 21.11</dd></div></dl>
+</section><section aria-labelledby="calendar-title" class="birthday-calendar">
+<div class="calendar-intro"><p class="micro">The birthday calendar</p><h2 id="calendar-title">November</h2><p>В этом месяце есть один особенный день.<br/>Найди его в календаре.</p></div>
+<div class="calendar-layout">
+<div aria-label="Выбери день ноября" class="calendar-grid" role="group"><button aria-label="1 ноября" aria-pressed="false" class="calendar-day" data-day="1" type="button">1</button><button aria-label="2 ноября" aria-pressed="false" class="calendar-day" data-day="2" type="button">2</button><button aria-label="3 ноября" aria-pressed="false" class="calendar-day" data-day="3" type="button">3</button><button aria-label="4 ноября" aria-pressed="false" class="calendar-day" data-day="4" type="button">4</button><button aria-label="5 ноября" aria-pressed="false" class="calendar-day" data-day="5" type="button">5</button><button aria-label="6 ноября" aria-pressed="false" class="calendar-day" data-day="6" type="button">6</button><button aria-label="7 ноября" aria-pressed="false" class="calendar-day" data-day="7" type="button">7</button><button aria-label="8 ноября" aria-pressed="false" class="calendar-day" data-day="8" type="button">8</button><button aria-label="9 ноября" aria-pressed="false" class="calendar-day" data-day="9" type="button">9</button><button aria-label="10 ноября" aria-pressed="false" class="calendar-day" data-day="10" type="button">10</button><button aria-label="11 ноября" aria-pressed="false" class="calendar-day" data-day="11" type="button">11</button><button aria-label="12 ноября" aria-pressed="false" class="calendar-day" data-day="12" type="button">12</button><button aria-label="13 ноября" aria-pressed="false" class="calendar-day" data-day="13" type="button">13</button><button aria-label="14 ноября" aria-pressed="false" class="calendar-day" data-day="14" type="button">14</button><button aria-label="15 ноября" aria-pressed="false" class="calendar-day" data-day="15" type="button">15</button><button aria-label="16 ноября" aria-pressed="false" class="calendar-day" data-day="16" type="button">16</button><button aria-label="17 ноября" aria-pressed="false" class="calendar-day" data-day="17" type="button">17</button><button aria-label="18 ноября" aria-pressed="false" class="calendar-day" data-day="18" type="button">18</button><button aria-label="19 ноября" aria-pressed="false" class="calendar-day" data-day="19" type="button">19</button><button aria-label="20 ноября" aria-pressed="false" class="calendar-day" data-day="20" type="button">20</button><button aria-label="21 ноября" aria-pressed="false" class="calendar-day birthday" data-day="21" type="button">21</button><button aria-label="22 ноября" aria-pressed="false" class="calendar-day" data-day="22" type="button">22</button><button aria-label="23 ноября" aria-pressed="false" class="calendar-day" data-day="23" type="button">23</button><button aria-label="24 ноября" aria-pressed="false" class="calendar-day" data-day="24" type="button">24</button><button aria-label="25 ноября" aria-pressed="false" class="calendar-day" data-day="25" type="button">25</button><button aria-label="26 ноября" aria-pressed="false" class="calendar-day" data-day="26" type="button">26</button><button aria-label="27 ноября" aria-pressed="false" class="calendar-day" data-day="27" type="button">27</button><button aria-label="28 ноября" aria-pressed="false" class="calendar-day" data-day="28" type="button">28</button><button aria-label="29 ноября" aria-pressed="false" class="calendar-day" data-day="29" type="button">29</button><button aria-label="30 ноября" aria-pressed="false" class="calendar-day" data-day="30" type="button">30</button></div>
+<div aria-atomic="true" aria-live="polite" class="calendar-result">
+<p class="micro" id="calendar-label">Pick a day</p><h3 id="calendar-result-title">У каждого дня —<br/>своя история.</h3><div id="calendar-result-copy"><p>Выбери число. Самое важное мы приберегли для 21 ноября.</p></div>
+</div>
+</div>
+<noscript><p>21 ноября — особенный день. В астрологических портретах рождённых в эту дату описывают как увлечённых, решительных и ярких людей, сочетающих лёгкость общения с глубиной чувств. <a href="https://cafeastrology.com/birthday/bornnovember21.html">Cafe Astrology</a></p></noscript>
+</section>
+</article>
+<details class="sources"><summary class="micro">Источники</summary><ol class="source-list"><li><a href="https://www.etymonline.com/word/Sabrina">[1] Etymonline — Sabrina</a><small>История имени, название Северн, литературный образ у Мильтона.</small></li><li><a href="https://catalog.afi.com/Film/51337-Sabrina/">[2] AFI Catalog — Sabrina (1954)</a><small>Год, жанр, режиссёр и актёрский состав фильма.</small></li><li><a href="https://www.astrology.com/zodiac-signs/scorpio">[3] Astrology.com — Scorpio</a><small>Сведения об астрологической традиции: стихия, качество, управители и примерные даты.</small></li><li><a href="https://cafeastrology.com/birthday/bornnovember21.html">[4] Cafe Astrology — November 21</a><small>Астрологический портрет рождённых 21 ноября.</small></li></ol></details>
+<footer class="page-footer"><a class="micro back-link" href="page-2.html">← Предыдущая</a><p aria-label="Страница 3" class="folio">03</p><a class="next micro" href="page-4.html">Her vibe <span aria-hidden="true">→</span></a></footer>
+</main>
+<script>
+(() => {
+
+ let confettiLayer;
+ let confettiCleanup;
+ function birthdayBurst(button) {
+  if (confettiLayer) confettiLayer.remove();
+  clearTimeout(confettiCleanup);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !Element.prototype.animate) return;
+  const bounds = button.getBoundingClientRect();
+  const originX = bounds.left + bounds.width / 2;
+  const originY = bounds.top + bounds.height / 2;
+  const layer = document.createElement('div');
+  layer.className = 'birthday-confetti';
+  layer.setAttribute('aria-hidden', 'true');
+  confettiLayer = layer;
+  document.body.append(layer);
+  const colors = ['#d9c89a', '#eee9df', '#a28e63', '#682b37', '#c0a46e'];
+  const count = window.innerWidth < 600 ? 45 : 70;
+  for (let i = 0; i < count; i++) {
+   const piece = document.createElement('span');
+   piece.className = 'confetti-piece' + (i % 5 === 0 ? ' sparkle' : '');
+   piece.style.setProperty('--confetti-color', colors[i % colors.length]);
+   layer.append(piece);
+   const angle = -Math.PI + Math.random() * Math.PI;
+   const distance = 110 + Math.random() * Math.min(window.innerWidth * .5, 410);
+   const drift = Math.cos(angle) * distance;
+   const lift = Math.sin(angle) * (130 + Math.random() * 230) - 50;
+   const spin = (Math.random() - .5) * 1000;
+   const start = `translate3d(${originX}px,${originY}px,0) rotate(0deg)`;
+   const peak = `translate3d(${originX + drift * .65}px,${originY + lift}px,0) rotate(${spin * .4}deg)`;
+   const end = `translate3d(${originX + drift}px,${Math.max(originY + 280, window.innerHeight + 40)}px,0) rotate(${spin}deg)`;
+   piece.animate([
+    {transform:start,opacity:0,offset:0},
+    {transform:start,opacity:1,offset:.04},
+    {transform:peak,opacity:1,offset:.36},
+    {transform:end,opacity:0,offset:1}
+   ], {duration:1900 + Math.random() * 850,delay:Math.random() * 110,easing:'cubic-bezier(.15,.5,.4,1)',fill:'both'});
+  }
+  confettiCleanup = setTimeout(() => {
+   layer.remove();
+   if (confettiLayer === layer) confettiLayer = null;
+  }, 3000);
+ }
+
+ const buttons = [...document.querySelectorAll('.calendar-day')];
+ const panel = document.querySelector('.calendar-result');
+ const label = document.getElementById('calendar-label');
+ const title = document.getElementById('calendar-result-title');
+ const copy = document.getElementById('calendar-result-copy');
+ buttons.forEach(button => button.addEventListener('click', () => {
+  const day = Number(button.dataset.day);
+  buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  panel.classList.toggle('is-special', day === 21);
+  label.textContent = day === 21 ? '21 November / Her day' : day + ' November';
+  title.textContent = day === 21 ? '21 ноября — особенный день ✧' : day + ' ноября — обычный день';
+  copy.replaceChildren();
+  const paragraphs = day === 21 ? [
+   'Астрологический портрет / рождённые 21 ноября',
+   'В астрологических описаниях этой даты лёгкость и обаяние соседствуют с сильными чувствами, решительностью и амбициями. Такие люди могут быть открытыми и игривыми — и при этом глубоко увлекаться тем, что для них важно.',
+   'Их портрет — любопытство к жизни, внутренняя энергия и желание проживать всё по-настоящему. Сначала долго обдумать, а затем неожиданно решиться на смелый шаг — тоже часть этого образа.',
+   'Страсть · глубина · вдохновение'
+  ] : ['Красивый ноябрьский день. Но главный повод для праздника ещё впереди — попробуй выбрать 21.'];
+  paragraphs.forEach((text,index) => {
+   const p = document.createElement('p');
+   p.textContent = text;
+   if(day === 21 && index === 0) p.className = 'micro';
+   if(day === 21 && index === paragraphs.length - 1) p.className = 'birthday-traits';
+   copy.append(p);
+  });
+  if(day === 21) {
+   birthdayBurst(button);
+   const link = document.createElement('a');
+   link.href = 'https://cafeastrology.com/birthday/bornnovember21.html';
+   link.className = 'cite';
+   link.textContent = '[4]';
+   link.setAttribute('aria-label', 'Источник астрологического портрета: Cafe Astrology');
+   copy.append(link);
+  }
+ }));
+})();
+</script></body></html>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Вещи без которых её тяжело представить — Birthday 19th edition</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ============ СЕКЦИЯ 1: ЗАГОЛОВОК ============ */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 90pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #000000;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            max-width: 1200px;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out 0.15s both;
+        }
+
+        .hero-divider {
+            width: 140px;
+            height: 2px;
+            background: #000000;
+            margin-bottom: 60px;
+            animation: expand 0.7s ease-out 0.4s both;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #999999;
+            letter-spacing: 0.05em;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        /* ============ СЕКЦИЯ 2: КРУГ С ВЕЩАМИ ============ */
+        .items-section {
+            min-height: 100vh;
+            padding: 100px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Контейнер — квадрат, всё центрируется строго */
+        .items-circle {
+            position: relative;
+            width: 900px;
+            height: 900px;
+        }
+
+        /* Обёртка фото — только центрирование, без анимации */
+        .hero-photo-wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+
+        /* Внутри — фото с анимацией, но она не влияет на центрирование */
+        .hero-photo {
+            width: 320px;
+            height: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 4px solid #7a2430;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35), 0 0 0 8px rgba(122, 36, 48, 0.15);
+            animation: fadeInScale 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(0.15);
+            transition: filter 0.5s ease;
+        }
+
+        .hero-photo:hover img {
+            filter: grayscale(0);
+        }
+
+        /* Вращающийся контейнер — точка вращения строго в центре квадрата */
+        .items-rotator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            animation: rotateCircle 60s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes rotateCircle {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Обёртка карточки — позиция на кругу */
+        .item-position {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 160px;
+            margin: -80px 0 0 -80px;
+        }
+
+        /* Компенсатор — фото не крутится, а только едет по кругу */
+        .item-counter {
+            width: 100%;
+            height: 100%;
+            animation: rotateCircleReverse 60s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes rotateCircleReverse {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* Сама карточка */
+        .item {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            border: 4px solid #7a2430;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            background: #ffffff;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+            .item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                filter: grayscale(0.2);
+                transition: filter 0.4s ease;
+            }
+
+            /* Пульсирующее свечение */
+            .item::before {
+                content: '';
+                position: absolute;
+                inset: -4px;
+                border-radius: 50%;
+                pointer-events: none;
+                animation: glowPulse 3s ease-in-out infinite;
+                z-index: 2;
+            }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 25px rgba(122, 36, 48, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgba(122, 36, 48, 0.85), 0 0 80px rgba(122, 36, 48, 0.4);
+            }
+        }
+
+        /* Hover — карточка растёт на месте */
+        .item:hover {
+            transform: scale(1.18);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 60px rgba(122, 36, 48, 0.9);
+            z-index: 10;
+        }
+
+            .item:hover img {
+                filter: grayscale(0);
+            }
+
+        /* Позиции карточек на кругу */
+        .item-1 {
+            transform: rotate(0deg) translateY(-400px);
+        }
+
+        .item-2 {
+            transform: rotate(45deg) translateY(-400px);
+        }
+
+        .item-3 {
+            transform: rotate(90deg) translateY(-400px);
+        }
+
+        .item-4 {
+            transform: rotate(135deg) translateY(-400px);
+        }
+
+        .item-5 {
+            transform: rotate(180deg) translateY(-400px);
+        }
+
+        .item-6 {
+            transform: rotate(225deg) translateY(-400px);
+        }
+
+        .item-7 {
+            transform: rotate(270deg) translateY(-400px);
+        }
+
+        .item-8 {
+            transform: rotate(315deg) translateY(-400px);
+        }
+
+        /* ============ МОДАЛКА ============ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+            .modal-overlay.show {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+        .modal {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 60px 60px 50px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+            transform: scale(0.85);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.show .modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36pt;
+            font-weight: 300;
+            color: #999999;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.3s ease, transform 0.3s ease;
+            z-index: 2;
+            background: none;
+            border: none;
+        }
+
+            .modal .close-btn:hover {
+                color: #000000;
+                transform: rotate(90deg);
+            }
+
+        .modal-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14pt;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #7a2430;
+            margin-bottom: 20px;
+        }
+
+        .modal h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #000000;
+            line-height: 1;
+            margin-bottom: 25px;
+            letter-spacing: 0.01em;
+        }
+
+        .modal-divider {
+            width: 80px;
+            height: 2px;
+            background: #000000;
+            margin-bottom: 30px;
+        }
+
+        .modal-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            font-weight: 400;
+            color: #333333;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+            .modal-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+        /* ============ КНОПКА "НАЗАД" ============ */
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #000000;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            z-index: 100;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .back-button:hover {
+                background: #000000;
+                color: #ffffff;
+                border-color: #000000;
+                transform: translateX(-4px);
+            }
+
+            .back-button .arrow {
+                font-style: normal;
+                transition: transform 0.2s ease;
+            }
+
+            .back-button:hover .arrow {
+                transform: translateX(-4px);
+            }
+
+        /* ============ КНОПКА ВНИЗУ ============ */
+        .next-section {
+            text-align: center;
+            padding: 60px 0 100px;
+        }
+
+        .next-button-bottom {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #000000;
+            text-decoration: none;
+            padding: 18px 45px;
+            border: 1px solid #000000;
+            background: #ffffff;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+            .next-button-bottom:hover {
+                background: #000000;
+                color: #ffffff;
+                transform: translateX(8px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            }
+
+            .next-button-bottom .arrow {
+                font-style: normal;
+                transition: transform 0.3s ease;
+            }
+
+            .next-button-bottom:hover .arrow {
+                transform: translateX(8px);
+            }
+
+        /* ============ АНИМАЦИИ ============ */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expand {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+
+            to {
+                width: 140px;
+                opacity: 1;
+            }
+        }
+
+        /* ============ АДАПТИВНОСТЬ ============ */
+        @media (max-width: 1000px) {
+            .hero-section {
+                padding: 100px 30px;
+            }
+
+            .hero-title {
+                font-size: 45pt;
+                margin-bottom: 35px;
+            }
+
+            .hero-divider {
+                margin-bottom: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 18pt;
+            }
+
+            .items-circle {
+                width: 600px;
+                height: 600px;
+            }
+
+            .hero-photo {
+                width: 220px;
+                height: 290px;
+            }
+
+            .item-position {
+                width: 110px;
+                height: 110px;
+                margin: -55px 0 0 -55px;
+            }
+
+            .item-1 {
+                transform: rotate(0deg) translateY(-270px);
+            }
+
+            .item-2 {
+                transform: rotate(45deg) translateY(-270px);
+            }
+
+            .item-3 {
+                transform: rotate(90deg) translateY(-270px);
+            }
+
+            .item-4 {
+                transform: rotate(135deg) translateY(-270px);
+            }
+
+            .item-5 {
+                transform: rotate(180deg) translateY(-270px);
+            }
+
+            .item-6 {
+                transform: rotate(225deg) translateY(-270px);
+            }
+
+            .item-7 {
+                transform: rotate(270deg) translateY(-270px);
+            }
+
+            .item-8 {
+                transform: rotate(315deg) translateY(-270px);
+            }
+
+            .modal {
+                padding: 40px 30px 30px;
+            }
+
+                .modal h2 {
+                    font-size: 38pt;
+                }
+
+            .modal-description {
+                font-size: 15pt;
+            }
+
+            .modal-image {
+                height: 250px;
+            }
+
+            .next-button-bottom {
+                font-size: 18pt;
+                padding: 14px 30px;
+            }
+        }
+    
+        /* Birthday / shared issue palette and editorial styling. */
+        :root{--paper:#eee9df;--ink:#171714;--wine:#682b37;--gold:#a28e63;--muted:#6e6b63;--rule:#aaa394;--margin:clamp(22px,4.5vw,70px)}
+        body{background:#161615;color:var(--ink);-webkit-font-smoothing:antialiased}
+        ::selection{background:#d9c89a;color:var(--ink)}
+        .page{max-width:1440px;margin:36px auto;padding:0 var(--margin);background:var(--paper);box-shadow:0 16px 80px #0003}
+        a{color:inherit;text-decoration:none}
+        .micro{font-family:Arial,sans-serif;font-size:10px;line-height:1.5;letter-spacing:.17em;text-transform:uppercase}
+        .running-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:23px 0 19px;border-bottom:1px solid var(--ink)}
+        .masthead{font-size:26px;font-weight:400;line-height:1;text-transform:uppercase;letter-spacing:-.045em}.running-head>p:last-child{text-align:right}
+        .back-button{position:static;font-family:Arial,sans-serif;font-size:10px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;font-style:normal;border:0;border-radius:0;padding:6px 0;background:none;backdrop-filter:none;width:fit-content;color:var(--ink)}
+        .back-button:hover{background:transparent;color:var(--wine)}
+        .hero-section{min-height:0;padding:65px 0 40px}
+        .section-kicker{color:var(--muted);margin-bottom:28px}
+        .hero-title{font-size:clamp(48px,7.6vw,110px);font-weight:400;letter-spacing:-.045em;line-height:1.02;max-width:18ch;margin-bottom:30px;color:var(--ink);text-wrap:balance}
+        .hero-divider{height:1px;background:var(--gold);margin-bottom:26px}
+        .hero-subtitle{font-size:clamp(21px,2.4vw,29px);color:var(--muted);letter-spacing:0;line-height:1.3;max-width:32ch}
+        .items-section{min-height:0;padding:25px 0 75px}
+        .items-circle{--radius:min(350px,29vw);--item-size:clamp(52px,12vw,140px);width:min(900px,100%);height:auto;aspect-ratio:1}
+        .hero-photo{width:clamp(76px,24vw,280px);height:auto;aspect-ratio:320/420;border-radius:0;border:5px solid var(--paper);outline:1px solid #a28e6377;box-shadow:0 18px 45px #17171430;background:#b9b2a1}
+        .item-position{width:var(--item-size);height:var(--item-size);margin:calc(var(--item-size)/-2) 0 0 calc(var(--item-size)/-2)}
+        .item{display:block;padding:0;font:inherit;border:2px solid var(--gold);background:var(--paper);box-shadow:0 8px 22px #17171424;-webkit-tap-highlight-color:transparent}
+        .item:hover{box-shadow:0 14px 30px #17171433,0 0 28px #a28e6377}
+        .item:active{transform:scale(.95)}
+        .item-1{transform:rotate(0deg) translateY(calc(-1*var(--radius)))}
+        .item-2{transform:rotate(45deg) translateY(calc(-1*var(--radius)))}
+        .item-3{transform:rotate(90deg) translateY(calc(-1*var(--radius)))}
+        .item-4{transform:rotate(135deg) translateY(calc(-1*var(--radius)))}
+        .item-5{transform:rotate(180deg) translateY(calc(-1*var(--radius)))}
+        .item-6{transform:rotate(225deg) translateY(calc(-1*var(--radius)))}
+        .item-7{transform:rotate(270deg) translateY(calc(-1*var(--radius)))}
+        .item-8{transform:rotate(315deg) translateY(calc(-1*var(--radius)))}
+        .modal-overlay{padding:24px;background:#17171488}
+        .modal{background:var(--paper);color:var(--ink);border-radius:0;border:1px solid var(--gold);padding:48px;max-height:90svh;box-shadow:0 30px 90px #0005}
+        .modal-label{font-family:Arial,sans-serif;font-size:10px;font-style:normal;letter-spacing:.17em;color:var(--wine);margin-bottom:18px}
+        .modal h2{font-size:clamp(34px,5.5vw,66px);font-weight:400;letter-spacing:-.035em;color:var(--ink);line-height:1.05}
+        .modal-divider{height:1px;background:var(--gold);margin-bottom:22px}
+        .modal-description{font-size:22px;line-height:1.45;color:#45433e;margin-bottom:26px}
+        .modal-image{height:auto;aspect-ratio:8/5;max-height:350px;border-radius:0;box-shadow:none;background:#b9b2a1}
+        .modal .close-btn{color:var(--muted);right:16px;top:14px;font-size:34px}
+        .next-section{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;border-top:1px solid var(--ink);padding:24px 0}
+        .folio{font-size:27px;font-style:italic}
+        .next-button-bottom{justify-self:end;border:0;border-radius:0;background:none;padding:6px 0;font-family:Arial,sans-serif;font-size:10px;font-style:normal;letter-spacing:.08em;text-transform:uppercase;box-shadow:none;max-width:24ch;text-align:right;line-height:1.5}
+        .next-button-bottom:hover{background:none;color:var(--wine);box-shadow:none;transform:translateX(3px)}
+        a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+        @media(max-width:1000px){.page{margin:0 auto}.hero-section{padding-top:48px}.items-section{padding-bottom:55px}.hero-photo{border-width:3px}}
+        @media(max-width:600px){.running-head{grid-template-columns:1fr auto;gap:10px}.running-head>p:last-child{display:none}.masthead{font-size:24px}.back-button{font-size:8px}.hero-section{padding:38px 0 30px}.section-kicker{font-size:9px;margin-bottom:20px}.hero-title{font-size:clamp(44px,10vw,60px);max-width:17ch;margin-bottom:25px}.hero-subtitle{font-size:22px}.items-section{padding-top:25px;padding-bottom:50px}.modal-overlay{padding:16px}.modal{padding:40px 24px 26px}.modal-description{font-size:20px}.next-section{gap:12px}.previous-link,.next-button-bottom{font-size:8px;letter-spacing:.03em}.next-button-bottom{gap:5px}.folio{font-size:25px}}
+        @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<!-- Кнопка назад -->
+
+<div class="page"><header class="running-head"><a class="back-button" href="page-1.html">
+<span class="arrow">←</span>
+        Back to contents
+    </a><p class="masthead">Birthday</p><p class="micro">Issue № 19 / Her essentials</p></header>
+<!-- ============ СЕКЦИЯ 1: ЗАГОЛОВОК ============ -->
+<section class="hero-section"><p class="section-kicker micro">04 / Глава 3</p>
+<h1 class="hero-title">Вещи без которых её тяжело представить</h1>
+<div class="hero-divider"></div>
+<p class="hero-subtitle">маленькие детали, которые говорят о ней громче слов</p>
+</section>
+<!-- ============ СЕКЦИЯ 2: КРУГ С ВЕЩАМИ ============ -->
+<section class="items-section">
+<div class="items-circle">
+<!-- Фото именинницы — через обёртку, чтобы анимация не сдвигала -->
+<div class="hero-photo-wrap">
+<div class="hero-photo">
+<img alt="Именинница" src="hero-photo.jpg"/>
+</div>
+</div>
+<!-- Вращающийся контейнер с карточками -->
+<div class="items-rotator">
+<div class="item-position item-1">
+<div class="item-counter">
+<button aria-label="Открыть вещь №1" class="item" data-item="1" type="button">
+<img alt="" src="item-1.jpg"/>
+</button>
+</div>
+</div>
+<div class="item-position item-2">
+<div class="item-counter">
+<button aria-label="Открыть вещь №2" class="item" data-item="2" type="button">
+<img alt="" src="item-2.jpg"/>
+</button>
+</div>
+</div>
+<div class="item-position item-3">
+<div class="item-counter">
+<button aria-label="Открыть вещь №3" class="item" data-item="3" type="button">
+<img alt="" src="item-3.jpg"/>
+</button>
+</div>
+</div>
+<div class="item-position item-4">
+<div class="item-counter">
+<button aria-label="Открыть вещь №4" class="item" data-item="4" type="button">
+<img alt="" src="item-4.jpg"/>
+</button>
+</div>
+</div>
+<div class="item-position item-5">
+<div class="item-counter">
+<button aria-label="Открыть вещь №5" class="item" data-item="5" type="button">
+<img alt="" src="item-5.jpg"/>
+</button>
+</div>
+</div>
+<div class="item-position item-6">
+<div class="item-counter">
+<button aria-label="Открыть вещь №6" class="item" data-item="6" type="button">
+<img alt="" src="item-6.jpg"/>
+</button>
+</div>
+</div>
+<div class="item-position item-7">
+<div class="item-counter">
+<button aria-label="Открыть вещь №7" class="item" data-item="7" type="button">
+<img alt="" src="item-7.jpg"/>
+</button>
+</div>
+</div>
+<div class="item-position item-8">
+<div class="item-counter">
+<button aria-label="Открыть вещь №8" class="item" data-item="8" type="button">
+<img alt="" src="item-8.jpg"/>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ КНОПКА ВНИЗУ ============ -->
+<div class="next-section"><a class="previous-link micro" href="page-4.html">← Предыдущая</a><span class="folio">05</span>
+<a class="next-button-bottom" href="page-6.html">
+                Перейти к следующей странице
+                <span class="arrow">→</span>
+</a>
+</div>
+</div>
+<!-- ============ МОДАЛКА ============ -->
+<div class="modal-overlay" id="modalOverlay">
+<div aria-labelledby="modalTitle" aria-modal="true" class="modal" role="dialog">
+<button aria-label="Закрыть" class="close-btn" id="closeBtn">×</button>
+<p class="modal-label" id="modalLabel">Вещь №1</p>
+<h2 id="modalTitle">Название вещи</h2>
+<div class="modal-divider"></div>
+<p class="modal-description" id="modalDescription">
+                Здесь будет текст о том, почему эта вещь так важна для неё.
+            </p>
+<div class="modal-image">
+<img alt="" id="modalImage" src=""/>
+</div>
+</div>
+</div>
+<!-- ============ СКРИПТ ============ -->
+<script>
+                const itemsData = {
+                    '1': {
+                        label: 'Вещь №1',
+                        title: 'Цифровое пианино',
+                        description: 'То самое пианино, которое она купила себе сама и теперь играет прекрасные произведения дома)',
+                        image: 'item-1-big.jpg'
+                    },
+                    '2': {
+                        label: 'Вещь №2',
+                        title: 'Сбоник еврейских анекдотов',
+                        description: 'Неожиданная вещь в дамской сумочке, но в каждой женщине должна быть загадка',
+                        image: 'item-2-big.jpg'
+                    },
+                    '3': {
+                        label: 'Вещь №3',
+                        title: 'Майонез',
+                        description: 'Иногда нужно отдыхать от инстаграмных блюд (это Ярик предложил добавить)',
+                        image: 'item-3-big.jpg'
+                    },
+                    '4': {
+                        label: 'Вещь №4',
+                        title: 'Гитара',
+                        description: 'Гитара старшего брата имеет особый вайб и особенно круто звучит в её каверах',
+                        image: 'item-4-big.jpg'
+                    },
+                    '5': {
+                        label: 'Вещь №5',
+                        title: 'Чай',
+                        description: 'Самый вкусный ЗАВАРНОЙ чай можно попробовать только у неё дома. Такого вы не найдёте ни в каких кафе и ресторанах',
+                        image: 'item-5-big.jpg'
+                    },
+                    '6': {
+                        label: 'Вещь №6',
+                        title: 'Киса',
+                        description: 'Самый верный пушистый компаньон',
+                        image: 'item-6-big.jpg'
+                    },
+                    '7': {
+                        label: 'Вещь №7',
+                        title: 'Мыльница',
+                        description: 'Когда-нибудь, она обязательно найдёт способ скинуть с неё фотки, а пока что вайбовые кадры есть только у владелицы шедевро-фотоаппарата',
+                        image: 'item-7-big.jpg'
+                    },
+                    '8': {
+                        label: 'Вещь №8',
+                        title: 'Чертежи',
+                        description: 'Именно то, что пугает всех студентов не архитекторов, пугает и завораживает',
+                        image: 'item-8-big.jpg'
+                    }
+                };
+
+                const modalOverlay = document.getElementById('modalOverlay');
+                const modalLabel = document.getElementById('modalLabel');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalDescription = document.getElementById('modalDescription');
+                const modalImage = document.getElementById('modalImage');
+                const closeBtn = document.getElementById('closeBtn');
+
+                document.querySelectorAll('.item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const itemId = item.getAttribute('data-item');
+                        const data = itemsData[itemId];
+
+                        if (data) {
+                            modalLabel.textContent = data.label;
+                            modalTitle.textContent = data.title;
+                            modalDescription.textContent = data.description;
+                            modalImage.src = data.image;
+
+                            modalOverlay.classList.add('show');
+                        }
+                    });
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    modalOverlay.classList.remove('show');
+                });
+
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) {
+                        modalOverlay.classList.remove('show');
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        modalOverlay.classList.remove('show');
+                    }
+                });
+    
+                document.querySelectorAll('img').forEach((img,index) => {
+                    const fallback = () => {
+                        if (img.src.startsWith('data:')) return;
+                        const label = img.closest('.hero-photo') ? 'Sabrina' : String(index).padStart(2,'0');
+                        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="520"><rect width="400" height="520" fill="#b9b2a1"/><ellipse cx="280" cy="320" rx="170" ry="290" fill="none" stroke="#eee9df" stroke-opacity=".35" transform="rotate(30 280 320)"/><text x="200" y="285" text-anchor="middle" fill="#eee9df" font-family="Georgia,serif" font-size="64" font-style="italic">${label}</text></svg>`;
+                        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+                    };
+                    img.addEventListener('error', fallback);
+                    if (img.getAttribute('src') && img.complete && img.naturalWidth === 0) fallback();
+                });
+</script>
+</body>
+</html>

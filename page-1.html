@@ -1,0 +1,1214 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday — 19th edition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #0b0b0b;
+            color: #ffffff;
+        }
+
+        /* ---------- ОБЛОЖКА ---------- */
+        .slide {
+            height: 100vh;
+            width: 100%;
+            background-image: url('f257720a-2b8a-448b-84a0-9989b08244d9.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 40px 60px;
+        }
+
+            .slide::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.35);
+                z-index: 1;
+            }
+
+            .slide > * {
+                position: relative;
+                z-index: 2;
+            }
+
+        .title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 150pt;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 0.95;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        .edition {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60pt;
+            font-weight: 400;
+            color: #ffffff;
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 20px;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1.2s ease-out 0.3s both;
+        }
+
+        .bottom-text {
+            position: absolute;
+            left: 60px;
+            bottom: 40px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60pt;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.1;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1.2s ease-out 0.6s both;
+            z-index: 2;
+        }
+
+        .right-text {
+            position: absolute;
+            right: 60px;
+            bottom: 40px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 70pt;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: right;
+            line-height: 1.15;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1.2s ease-out 0.9s both;
+            z-index: 2;
+        }
+
+            .right-text .name {
+                font-style: italic;
+                font-weight: 400;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .right-text .tagline {
+                font-style: normal;
+                font-weight: 400;
+                display: block;
+                font-size: 40pt;
+                letter-spacing: 0.03em;
+            }
+
+        /* ---------- ОГЛАВЛЕНИЕ ---------- */
+        .contents {
+            min-height: 100vh;
+            background: #0b0b0b;
+            padding: 100px 60px 120px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .contents-inner {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contents-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #ffffff;
+            text-align: left;
+            line-height: 1;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            padding-bottom: 30px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+            .contents-header span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 30pt;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                display: block;
+                margin-bottom: 10px;
+                opacity: 0.6;
+            }
+
+        .toc {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .toc li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.8s ease, transform 0.8s ease;
+            }
+
+            .toc a {
+                display: flex;
+                align-items: baseline;
+                gap: 30px;
+                padding: 20px 20px;
+                color: #ffffff;
+                text-decoration: none;
+                transition: padding-left 0.3s ease, color 0.3s ease;
+            }
+
+                .toc a:hover {
+                    padding-left: 40px;
+                    color: #d9c89a;
+                }
+
+            .toc .num {
+                font-size: 20pt;
+                font-weight: 700;
+                font-style: italic;
+                min-width: 60px;
+                line-height: 1;
+                opacity: 0.85;
+            }
+
+            .toc .chapter {
+                font-size: 30pt;
+                font-weight: 400;
+                flex: 1;
+                line-height: 1.1;
+            }
+
+            .toc .arrow {
+                font-size: 20pt;
+                opacity: 0.6;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .toc a:hover .arrow {
+                transform: translateX(10px);
+                opacity: 1;
+            }
+
+        /* ---------- ДЕКОРАТИВНЫЕ КАРТИНКИ ---------- */
+        .deco {
+            position: absolute;
+            width: 140px;
+            height: auto;
+            opacity: 0; /* скрыто до появления */
+            pointer-events: auto;
+            transition: opacity 1.2s ease, transform 1.2s ease, filter 0.5s ease;
+            z-index: 1;
+            will-change: transform, opacity;
+        }
+
+        /* Расположение + базовый наклон + сдвиг в сторону */
+        .deco-1 {
+            top: 8%;
+            left: 4%;
+            transform: rotate(-25deg) translateX(-60px);
+        }
+
+        .deco-2 {
+            top: 32%;
+            left: 10%;
+            transform: rotate(15deg) translateX(-60px);
+        }
+
+        .deco-3 {
+            top: 62%;
+            left: 3%;
+            transform: rotate(-40deg) translateX(-60px);
+        }
+
+        .deco-4 {
+            top: 12%;
+            right: 5%;
+            transform: rotate(30deg) translateX(60px);
+        }
+
+        .deco-5 {
+            top: 40%;
+            right: 10%;
+            transform: rotate(-15deg) translateX(60px);
+        }
+
+        .deco-6 {
+            top: 68%;
+            right: 4%;
+            transform: rotate(35deg) translateX(60px);
+        }
+
+        /* ---------- ПОЯВЛЕНИЕ ---------- */
+        .contents.visible .contents-header {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contents.visible .toc li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+            /* Задержки для пунктов оглавления — по очереди */
+            .contents.visible .toc li:nth-child(1) {
+                transition-delay: 0.3s;
+            }
+
+            .contents.visible .toc li:nth-child(2) {
+                transition-delay: 0.4s;
+            }
+
+            .contents.visible .toc li:nth-child(3) {
+                transition-delay: 0.5s;
+            }
+
+            .contents.visible .toc li:nth-child(4) {
+                transition-delay: 0.6s;
+            }
+
+            .contents.visible .toc li:nth-child(5) {
+                transition-delay: 0.7s;
+            }
+
+            .contents.visible .toc li:nth-child(6) {
+                transition-delay: 0.8s;
+            }
+
+            .contents.visible .toc li:nth-child(7) {
+                transition-delay: 0.9s;
+            }
+
+            .contents.visible .toc li:nth-child(8) {
+                transition-delay: 1.0s;
+            }
+
+            .contents.visible .toc li:nth-child(9) {
+                transition-delay: 1.1s;
+            }
+
+            .contents.visible .toc li:nth-child(10) {
+                transition-delay: 1.2s;
+            }
+
+        /* Картинки появляются — со сдвигом на место + со своей задержкой */
+        .contents.visible .deco-1 {
+            opacity: 0.9;
+            transform: rotate(-25deg) translateX(0);
+            transition-delay: 0.1s;
+        }
+
+        .contents.visible .deco-2 {
+            opacity: 0.9;
+            transform: rotate(15deg) translateX(0);
+            transition-delay: 0.35s;
+        }
+
+        .contents.visible .deco-3 {
+            opacity: 0.9;
+            transform: rotate(-40deg) translateX(0);
+            transition-delay: 0.6s;
+        }
+
+        .contents.visible .deco-4 {
+            opacity: 0.9;
+            transform: rotate(30deg) translateX(0);
+            transition-delay: 0.2s;
+        }
+
+        .contents.visible .deco-5 {
+            opacity: 0.9;
+            transform: rotate(-15deg) translateX(0);
+            transition-delay: 0.45s;
+        }
+
+        .contents.visible .deco-6 {
+            opacity: 0.9;
+            transform: rotate(35deg) translateX(0);
+            transition-delay: 0.7s;
+        }
+
+        /* При наведении картинка выпрямляется, увеличивается и светится БЕЛЫМ */
+        .contents.visible .deco:hover {
+            opacity: 1;
+            transform: rotate(0deg) scale(1.2);
+            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.95));
+            transition-delay: 0s; /* hover срабатывает мгновенно, без задержки */
+        }
+
+        /* ---------- КОНТАКТЫ ПРОГРАММИСТА ---------- */
+        .credits {
+            min-height: 100vh;
+            background: #000000;
+            padding: 100px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+            .credits .label {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 24pt;
+                font-weight: 400;
+                letter-spacing: 0.4em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.5);
+                margin-bottom: 40px;
+            }
+
+            .credits .role {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 40pt;
+                font-weight: 400;
+                font-style: italic;
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 15px;
+            }
+
+            .credits .name {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 80pt;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 1;
+                margin-bottom: 40px;
+            }
+
+            .credits .contacts {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 30pt;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 0.8);
+                line-height: 1.6;
+            }
+
+                .credits .contacts a {
+                    color: #ffffff;
+                    text-decoration: none;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: color 0.3s ease, border-color 0.3s ease;
+                }
+
+                    .credits .contacts a:hover {
+                        color: #ffffff;
+                        border-color: #ffffff;
+                    }
+
+        /* ---------- АНИМАЦИИ ---------- */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Editorial refinement — original images, copy and palette preserved. */
+        :root {
+            --paper: #fff;
+            --ink: #0b0b0b;
+            --accent: #d9c89a;
+            --gutter: clamp(22px,4.2vw,72px);
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--ink);
+        }
+
+        .slide {
+            height: auto;
+            min-height: 860px;
+            min-height: max(760px,100svh);
+            padding: 34px var(--gutter) 100px;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 12px 28px;
+        }
+
+            .slide::before {
+                background: linear-gradient(180deg,rgba(0,0,0,.26),rgba(0,0,0,.08) 40%,rgba(0,0,0,.68));
+            }
+
+        .issue-line {
+            grid-column: 1/-1;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid #ffffff66;
+            padding-bottom: 13px;
+            font-size: 13px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .title {
+            grid-column: 1/-1;
+            font-size: clamp(76px,16.2vw,230px);
+            letter-spacing: -.065em;
+            line-height: .86;
+            margin-top: 14px;
+        }
+
+        .edition {
+            grid-column: 1/-1;
+            margin: 0 0 0 6px;
+            font-size: clamp(28px,4.3vw,66px);
+            font-style: italic;
+        }
+
+        .bottom-text, .right-text {
+            position: relative;
+            inset: auto;
+            align-self: end;
+            margin-top: 120px;
+        }
+
+        .bottom-text {
+            font-size: clamp(32px,4.5vw,68px);
+            line-height: .98;
+            letter-spacing: -.025em;
+        }
+
+        .right-text {
+            font-size: clamp(38px,5.8vw,88px);
+            line-height: 1;
+        }
+
+            .right-text .name {
+                margin-bottom: 18px;
+            }
+
+            .right-text .tagline {
+                font-size: clamp(13px,1.35vw,20px);
+                letter-spacing: .14em;
+                line-height: 1.5;
+            }
+
+        .editorial-note {
+            display: block;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: .2em;
+            line-height: 1.6;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .cover-link {
+            position: absolute;
+            bottom: 25px;
+            left: var(--gutter);
+            right: var(--gutter);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border-top: 1px solid #ffffff55;
+            padding-top: 15px;
+            color: var(--paper);
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: .12em;
+        }
+
+            .cover-link b {
+                font-size: 25px;
+                font-weight: 400;
+                transition: transform .3s;
+            }
+
+            .cover-link:hover b {
+                transform: translateY(4px);
+            }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 6px;
+        }
+
+        .contents {
+            padding: clamp(70px,9vw,140px) var(--gutter);
+            scroll-margin-top: 20px;
+        }
+
+            .contents::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: var(--gutter);
+                right: var(--gutter);
+                height: 1px;
+                background: linear-gradient(90deg,transparent,var(--accent),transparent);
+            }
+
+        .contents-inner {
+            max-width: 880px;
+        }
+
+        .contents-header {
+            font-size: clamp(64px,8vw,110px);
+            letter-spacing: -.045em;
+            margin-bottom: 24px;
+            padding-bottom: 28px;
+        }
+
+            .contents-header span {
+                font-size: 13px;
+                letter-spacing: .28em;
+                margin-bottom: 20px;
+                color: var(--accent);
+                opacity: 1;
+            }
+
+        .contents-intro {
+            color: #ffffff99;
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 26px;
+        }
+
+        .toc a {
+            padding: 22px 8px;
+            gap: 24px;
+        }
+
+        .toc .num {
+            font-size: 23px;
+            min-width: 40px;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .toc .chapter {
+            font-size: clamp(24px,2.8vw,39px);
+            line-height: 1.18;
+            min-width: 0;
+            overflow-wrap: break-word;
+        }
+
+        .toc .arrow {
+            font-size: 23px;
+        }
+
+        .toc a:hover {
+            padding-left: 16px;
+        }
+
+        .deco {
+            width: clamp(65px,8vw,130px);
+            pointer-events: none;
+        }
+
+        .folio {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 38px;
+            font-size: 12px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: #ffffff88;
+        }
+
+        .credits {
+            min-height: 65svh;
+            padding: 90px var(--gutter);
+            border-top: 1px solid #ffffff22;
+        }
+
+            .credits .label {
+                font-size: 13px;
+                letter-spacing: .25em;
+                margin-bottom: 28px;
+            }
+
+            .credits .role {
+                font-size: 28px;
+            }
+
+            .credits .name {
+                font-size: clamp(48px,8vw,90px);
+            }
+
+            .credits .contacts {
+                font-size: 24px;
+                overflow-wrap: anywhere;
+            }
+        /* Content remains readable without JavaScript or observer support. */
+        .contents-header, .toc li, .deco {
+            opacity: 1;
+            transform: none;
+        }
+
+        .reveal-ready .contents:not(.visible) .contents-header, .reveal-ready .contents:not(.visible) .toc li {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .reveal-ready .contents:not(.visible) .deco {
+            opacity: 0;
+        }
+
+        .contents.visible .deco {
+            opacity: .22;
+        }
+
+        @media(min-width:1400px) {
+            .contents-inner {
+                max-width: 920px;
+            }
+        }
+
+        @media(max-width:1100px) {
+            .deco {
+                opacity: .09 !important;
+            }
+        }
+
+        @media(max-width:600px) {
+            .slide {
+                min-height: max(760px,100svh);
+                grid-template-columns: minmax(0,1fr);
+                gap: 12px;
+                padding-top: 22px;
+                background-position: center;
+            }
+
+            .issue-line {
+                font-size: 10px;
+                letter-spacing: .12em;
+            }
+
+            .title {
+                font-size: clamp(50px,16vw,96px);
+                margin-top: 24px;
+            }
+
+            .edition {
+                font-size: 32px;
+            }
+
+            .bottom-text {
+                margin-top: 130px;
+                font-size: 39px;
+            }
+
+            .right-text {
+                margin-top: 26px;
+                font-size: 43px;
+                text-align: left;
+            }
+
+                .right-text .name {
+                    margin-bottom: 10px;
+                }
+
+                .right-text .tagline {
+                    font-size: 11px;
+                    letter-spacing: .1em;
+                }
+
+            .editorial-note {
+                font-size: 10px;
+                margin-bottom: 12px;
+            }
+
+            .cover-link {
+                font-size: 12px;
+            }
+
+            .toc a {
+                gap: 12px;
+                padding-block: 20px;
+            }
+
+            .toc .num {
+                min-width: 28px;
+                font-size: 19px;
+            }
+
+            .toc .arrow {
+                font-size: 20px;
+            }
+
+            .contents-header {
+                margin-bottom: 20px;
+            }
+
+            .deco {
+                display: none;
+            }
+
+            .folio {
+                font-size: 10px;
+                letter-spacing: .08em;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal-ready .contents:not(.visible) .contents-header, .reveal-ready .contents:not(.visible) .toc li, .reveal-ready .contents:not(.visible) .deco {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+
+        /* Floating editorial objects: ivory / black satin / champagne gold. */
+        .contents {
+            display: block;
+        }
+
+        .contents-inner {
+            margin-inline: auto;
+            max-width: min(880px,calc(100% - 320px));
+        }
+
+        .floating-objects {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .floating-object {
+            position: absolute;
+            width: clamp(115px,12vw,190px);
+            height: 210px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            background: transparent;
+            padding: 8px;
+            margin: 0;
+            pointer-events: auto;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            opacity: 1;
+            animation: editorial-float 7s ease-in-out var(--drift-delay) infinite;
+            transition: opacity .8s ease;
+        }
+
+            .floating-object img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                user-select: none;
+                transform: scale(1);
+                filter: drop-shadow(0 8px 14px #0008);
+                transition: filter .35s ease,transform .35s cubic-bezier(.2,.7,.2,1);
+            }
+
+        .object-cake {
+            top: 20%;
+            left: 20px;
+        }
+
+        .object-candles {
+            top: 28%;
+            right: 22px;
+        }
+
+        .object-hat {
+            top: 65%;
+            left: 24px;
+        }
+
+        .object-gift {
+            top: 73%;
+            right: 20px;
+        }
+
+        .floating-object:focus-visible {
+            outline: 1px solid var(--accent);
+            outline-offset: 5px;
+            border-radius: 12px;
+        }
+
+            .floating-object:focus-visible img, .floating-object[aria-pressed="true"] img {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 8px #fff9) drop-shadow(0 0 25px #d9c89a99);
+            }
+
+        @media(hover:hover) {
+            .floating-object:hover img {
+                transform: scale(1.12);
+                filter: drop-shadow(0 0 8px #fffc) drop-shadow(0 0 28px #d9c89aaa);
+            }
+
+            .floating-object:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        .reveal-ready .contents:not(.visible) .floating-object {
+            opacity: 0;
+        }
+
+        @keyframes editorial-float {
+            0%,100% {
+                transform: translateY(0) rotate(var(--tilt));
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(calc(var(--tilt) + 4deg));
+            }
+        }
+
+        @media(min-width:1600px) {
+            .object-cake, .object-hat {
+                left: calc((100% - 1320px)/2);
+            }
+
+            .object-candles, .object-gift {
+                right: calc((100% - 1320px)/2);
+            }
+        }
+
+        @media(max-width:1100px) and (min-width:801px) {
+            .contents-inner {
+                max-width: calc(100% - 240px);
+            }
+
+            .floating-object {
+                width: 130px;
+                height: 165px;
+            }
+
+            .object-cake, .object-hat {
+                left: 4px;
+            }
+
+            .object-candles, .object-gift {
+                right: 4px;
+            }
+        }
+
+        @media(max-width:800px) {
+            .contents-inner {
+                max-width: 100%;
+            }
+
+            .floating-objects {
+                position: relative;
+                inset: auto;
+                display: grid;
+                grid-template-columns: repeat(4,minmax(0,1fr));
+                gap: clamp(4px,2vw,20px);
+                max-width: 560px;
+                margin: 0 auto 45px;
+                padding-top: 10px;
+            }
+
+            .floating-object {
+                position: relative;
+                inset: auto;
+                width: 100%;
+                height: clamp(85px,18vw,140px);
+                padding: 4px;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .floating-object {
+                animation: none !important;
+                transform: rotate(var(--tilt));
+            }
+
+            .reveal-ready .contents:not(.visible) .floating-object {
+                opacity: 1;
+            }
+        }
+
+
+        /* Programmer's illustrated sign-off. */
+        .credits {
+            display: grid;
+            grid-template-columns: minmax(150px,280px) minmax(0,560px);
+            justify-content: center;
+            align-items: center;
+            gap: clamp(30px,6vw,90px)
+        }
+
+        .programmer-chibi {
+            text-align: center;
+            max-width: 280px;
+            justify-self: center
+        }
+
+            .programmer-chibi img {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: 320px;
+                object-fit: contain;
+                margin: 0 auto 12px
+            }
+
+            .programmer-chibi p {
+                font-family: 'Cormorant Garamond',Georgia,serif;
+                font-size: 21px;
+                font-style: italic;
+                line-height: 1.3;
+                color: #d9c89a;
+                max-width: 26ch;
+                margin: 0 auto
+            }
+
+        .programmer-info {
+            text-align: center;
+            min-width: 0
+        }
+
+        @media(max-width:650px) {
+            .credits {
+                grid-template-columns: minmax(0,1fr);
+                gap: 32px
+            }
+
+            .programmer-chibi {
+                max-width: 220px
+            }
+
+                .programmer-chibi img {
+                    max-height: 230px
+                }
+
+                .programmer-chibi p {
+                    font-size: 20px
+                }
+        }
+
+
+        /* Handwritten speech bubble from the little programmer. */
+        .programmer-chibi {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            padding-top: 12px
+        }
+
+            .programmer-chibi p {
+                order: -1;
+                position: relative;
+                font-family: 'Caveat','Segoe Print',cursive;
+                font-size: 27px;
+                line-height: 1.12;
+                color: #f3ead7;
+                background: #211b20;
+                border: 1.5px solid #d9c89a;
+                border-radius: 47% 43% 44% 39% / 22% 27% 24% 28%;
+                padding: 24px 24px 26px;
+                max-width: 290px;
+                margin: 0 0 23px;
+                transform: rotate(-3deg);
+                box-shadow: 3px 4px 0 #d9c89a18
+            }
+
+                .programmer-chibi p::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -17px;
+                    left: 57%;
+                    width: 23px;
+                    height: 29px;
+                    background: #211b20;
+                    border-right: 1.5px solid #d9c89a;
+                    border-bottom: 1.5px solid #d9c89a;
+                    transform: skew(-20deg) rotate(34deg);
+                    clip-path: polygon(0 0,100% 0,100% 100%);
+                    z-index: 0
+                }
+
+            .programmer-chibi img {
+                position: relative;
+                max-height: 285px;
+                margin: 0 auto
+            }
+
+        @media(max-width:650px) {
+            .programmer-chibi {
+                max-width: 270px
+            }
+
+                .programmer-chibi p {
+                    font-size: 25px;
+                    padding: 22px;
+                    max-width: 260px
+                }
+
+                .programmer-chibi img {
+                    max-height: 230px
+                }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== ОБЛОЖКА ===== -->
+    <section class="slide" aria-label="Обложка журнала">
+        <div class="issue-line"><span>Digital birthday magazine</span><span>№ 19 · Special issue</span></div>
+        <h1 class="title">Birthday</h1>
+        <p class="edition">19th edition</p>
+
+        <p class="bottom-text">
+            <span class="editorial-note">The birthday edit</span>
+            THE ARCHITECT<br>
+            GIRL<br>
+            BIRTHDAY
+        </p>
+
+        <p class="right-text">
+            <span class="name">Sabrina Medzitova</span>
+            <span class="tagline">HOT, UNSTOPPABLE AND ICONIC</span>
+        </p>
+        <a class="cover-link" href="#contents"><span>Открыть выпуск · К оглавлению</span><b aria-hidden="true">↓</b></a>
+    </section>
+
+    <!-- ===== ОГЛАВЛЕНИЕ ===== -->
+    <section class="contents" id="contents" aria-labelledby="contents-heading">
+
+        <!-- Generated transparent editorial cutouts, embedded for a single-file download. -->
+        <div class="floating-objects" role="group" aria-label="Праздничные украшения — нажми для подсветки">
+            <button type="button" class="floating-object object-cake" style="--tilt:-12deg;--drift-delay:-0.0s" aria-label="Тортик с атласным бантом: включить подсветку" aria-pressed="false" title="Тортик с атласным бантом"><img src="assets-generated/8d53d0de2251d12caeb5.png" alt="Тортик с атласным бантом" draggable="false" decoding="async"></button>
+            <button type="button" class="floating-object object-candles" style="--tilt:10deg;--drift-delay:-1.7s" aria-label="Свечи 19: включить подсветку" aria-pressed="false" title="Свечи 19"><img src="assets-generated/2bb8d50f619ed7bc78c6.png" alt="Свечи 19" draggable="false" decoding="async"></button>
+            <button type="button" class="floating-object object-hat" style="--tilt:-16deg;--drift-delay:-3.4s" aria-label="Праздничный колпачок: включить подсветку" aria-pressed="false" title="Праздничный колпачок"><img src="assets-generated/ff44c19e0e348f4d7304.png" alt="Праздничный колпачок" draggable="false" decoding="async"></button>
+            <button type="button" class="floating-object object-gift" style="--tilt:12deg;--drift-delay:-5.1s" aria-label="Подарок с чёрным бантом: включить подсветку" aria-pressed="false" title="Подарок с чёрным бантом"><img src="assets-generated/5890dff017ed75953e58.png" alt="Подарок с чёрным бантом" draggable="false" decoding="async"></button>
+        </div>
+
+        <!-- Оглавление по центру -->
+        <div class="contents-inner">
+            <h2 class="contents-header" id="contents-heading">
+                <span>Issue 19</span>
+                Contents
+            </h2>
+
+            <p class="contents-intro">The birthday issue / 9 разделов</p>
+            <nav aria-label="Оглавление журнала">
+                <ul class="toc">
+                    <li><a href="page-2.html"><span class="num">01</span><span class="chapter">Who's that girl?</span><span class="arrow">→</span></a></li>
+                    <li><a href="page-3.html"><span class="num">02</span><span class="chapter">Глава 1. Её имя и знак зодиака</span><span class="arrow">→</span></a></li>
+                    <li><a href="page-4.html"><span class="num">03</span><span class="chapter">Глава 2. Her vibe </span><span class="arrow">→</span></a></li>
+                    <li><a href="page-5.html"><span class="num">04</span><span class="chapter">Глава 3. Вещи, без которых её тяжело представить</span><span class="arrow">→</span></a></li>
+                    <li><a href="page-6.html"><span class="num">05</span><span class="chapter">Глава 4. Натальная карта</span><span class="arrow">→</span></a></li>
+                    <li><a href="page-7.html"><span class="num">06</span><span class="chapter">Глава 5. What we love about Sabrina</span><span class="arrow">→</span></a></li>
+                    <li><a href="page-8.html"><span class="num">07</span><span class="chapter">Глава 6. Интерактивная страничка</span><span class="arrow">→</span></a></li>
+                    <li><a href="page-9.html"><span class="num">08</span><span class="chapter">Глава 7. Страничка от друзей и близких</span><span class="arrow">→</span></a></li>
+                    <li><a href="page-10.html"><span class="num">09</span><span class="chapter">Глава 8. Торт и немного магии</span><span class="arrow">→</span></a></li>
+                </ul>
+            </nav>
+            <div class="folio"><span>Birthday · Issue 19</span><span>Contents / 01</span></div>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ ПРОГРАММИСТА ===== -->
+    <section class="credits">
+        <aside class="programmer-chibi"><img alt="Маленькая чиби программиста в чёрном худи" decoding="async" src="assets-generated/fc582db6d83d5919dc61.png" /><p>если что-то нужно поправить, изменить или добавить, то пиши, всё поменяем)</p></aside><div class="programmer-info">
+            <p class="label">Designed &amp; coded by</p>
+            <p class="role">programmer</p>
+            <p class="name">Urika♡♡♡</p>
+            <p class="contacts">
+                <a href="https://t.me/diluklover">@diluklover</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== СКРИПТ — В КОНЦЕ ===== -->
+    <script>
+                (() => {
+                    const section = document.querySelector('.contents');
+                    if (!section || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                    const observer = new IntersectionObserver(entries => {
+                        if (entries.some(entry => entry.isIntersecting)) {
+                            section.classList.add('visible');
+                            observer.disconnect();
+                        }
+                    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+                    observer.observe(section);
+                    document.documentElement.classList.add('reveal-ready');
+                })();
+
+                document.querySelectorAll('.floating-object').forEach(object => {
+                    const label = object.querySelector('img').alt;
+                    object.addEventListener('click', () => {
+                        const active = object.getAttribute('aria-pressed') !== 'true';
+                        object.setAttribute('aria-pressed', String(active));
+                        object.setAttribute('aria-label', label + (active ? ': выключить подсветку' : ': включить подсветку'));
+                    });
+                });
+    </script>
+
+</body>
+</html>

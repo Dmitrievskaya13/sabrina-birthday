@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What we love about Sabrina? — Birthday 19th edition</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ============ ЗАГОЛОВОК СТРАНИЦЫ ============ */
+        .page-header {
+            padding: 120px 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 90pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #000000;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease-out 0.15s both;
+        }
+
+        .page-divider {
+            width: 140px;
+            height: 2px;
+            background: #000000;
+            animation: expand 0.7s ease-out 0.35s both;
+        }
+
+        /* ============ ЗАПИСИ В ШАХМАТНОМ ПОРЯДКЕ ============ */
+        .notes {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 100px 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .note {
+            max-width: 500px;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+            /* Левая сторона */
+            .note.left {
+                align-self: flex-start;
+                text-align: left;
+            }
+
+            /* Правая сторона */
+            .note.right {
+                align-self: flex-end;
+                text-align: right;
+            }
+
+        .note-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48pt;
+            font-weight: 700;
+            color: #7a2430;
+            line-height: 1;
+            margin-bottom: 25px;
+            letter-spacing: 0.01em;
+        }
+
+        .note-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20pt;
+            font-weight: 400;
+            color: #333333;
+            line-height: 1.7;
+        }
+
+        /* Задержки для каждой записи */
+        .note:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .note:nth-child(2) {
+            animation-delay: 0.35s;
+        }
+
+        .note:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .note:nth-child(4) {
+            animation-delay: 0.65s;
+        }
+
+        /* ============ ФИНАЛЬНОЕ ФОТО ============ */
+        .final-photo-section {
+            padding: 80px 100px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .final-photo {
+            width: 100%;
+            max-width: 700px;
+            aspect-ratio: 4 / 5;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.25);
+            border: 6px solid #ffffff;
+            outline: 2px solid #7a2430;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+            .final-photo:hover {
+                transform: scale(1.02);
+                box-shadow: 0 50px 120px rgba(122, 36, 48, 0.35);
+            }
+
+            .final-photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+        /* ============ КНОПКА ВНИЗУ ============ */
+        .next-section {
+            text-align: center;
+            padding: 40px 40px 120px;
+        }
+
+        .next-button-bottom {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #000000;
+            text-decoration: none;
+            padding: 18px 45px;
+            border: 1px solid #000000;
+            background: #ffffff;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+        }
+
+            .next-button-bottom:hover {
+                background: #000000;
+                color: #ffffff;
+                transform: translateX(8px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            }
+
+            .next-button-bottom .arrow {
+                font-style: normal;
+                transition: transform 0.3s ease;
+            }
+
+            .next-button-bottom:hover .arrow {
+                transform: translateX(8px);
+            }
+
+        /* ============ КНОПКА "НАЗАД" ============ */
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #000000;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            z-index: 100;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .back-button:hover {
+                background: #000000;
+                color: #ffffff;
+                border-color: #000000;
+                transform: translateX(-4px);
+            }
+
+            .back-button .arrow {
+                font-style: normal;
+                transition: transform 0.2s ease;
+            }
+
+            .back-button:hover .arrow {
+                transform: translateX(-4px);
+            }
+
+        /* ============ АНИМАЦИИ ============ */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expand {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+
+            to {
+                width: 140px;
+                opacity: 1;
+            }
+        }
+
+        /* ============ АДАПТИВНОСТЬ ============ */
+        @media (max-width: 1000px) {
+            .page-header {
+                padding: 100px 30px 40px;
+            }
+
+            .page-title {
+                font-size: 48pt;
+                margin-bottom: 25px;
+            }
+
+            .page-divider {
+                width: 90px;
+            }
+
+            .notes {
+                padding: 40px 30px 60px;
+                gap: 60px;
+            }
+
+            .note {
+                max-width: 100%;
+            }
+
+                .note.left,
+                .note.right {
+                    align-self: stretch;
+                    text-align: left;
+                }
+
+            .note-title {
+                font-size: 32pt;
+            }
+
+            .note-text {
+                font-size: 17pt;
+            }
+
+            .final-photo-section {
+                padding: 60px 30px 80px;
+            }
+
+            .next-button-bottom {
+                font-size: 18pt;
+                padding: 14px 30px;
+            }
+        }
+    
+:root{--paper:#eee9df;--ink:#171714;--wine:#682b37;--gold:#a28e63;--muted:#6e6b63;--margin:clamp(22px,4.5vw,70px)}
+body{-webkit-font-smoothing:antialiased}a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.micro{font-family:Arial,sans-serif;font-size:10px;line-height:1.5;letter-spacing:.15em;text-transform:uppercase}
+.running-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:15px;padding:23px 0 19px;border-bottom:1px solid #aaa394}.masthead{font-size:26px;text-transform:uppercase;letter-spacing:-.045em}.running-head>p:last-child{text-align:right}.running-head a{color:inherit;text-decoration:none}
+@media(max-width:600px){.running-head{grid-template-columns:1fr auto}.running-head>p:last-child{display:none}.micro{font-size:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+body{background:#161615;color:var(--ink)}.sheet{max-width:1440px;margin:36px auto;padding:0 var(--margin);background:var(--paper)}.chapter-kicker{color:var(--muted);margin-bottom:25px}.page-header{padding:65px 0 35px;max-width:1100px}.page-title{font-size:clamp(54px,8.4vw,118px);font-weight:400;line-height:.95;letter-spacing:-.05em;color:var(--ink);max-width:15ch}.page-divider{height:1px;background:var(--gold)}.notes{padding:35px 0 45px;max-width:1000px;gap:48px}.note{max-width:62%;border-top:1px solid #aaa394;padding-top:20px}.note-number{display:block;color:var(--muted);margin-bottom:15px}.note-title{font-size:clamp(33px,4vw,54px);font-weight:400;letter-spacing:-.035em;color:var(--wine);line-height:1.05;margin-bottom:18px}.note-text{font-size:23px;line-height:1.45;color:#45433e}.final-photo-section{padding:35px 0 60px}.final-photo{max-width:560px;border-radius:0;border-color:var(--paper);outline:1px solid var(--gold);box-shadow:0 18px 45px #17171422;background:#b9b2a1}.next-section{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;padding:24px 0;border-top:1px solid var(--ink)}.next-section a{color:inherit;text-decoration:none}.folio{font-size:27px;font-style:italic}.next-button-bottom{justify-self:end;background:none;border:0;border-radius:0;padding:6px 0;font-size:19px;line-height:1.2;text-align:right}.next-button-bottom:hover{background:none;color:var(--wine);box-shadow:none;transform:translateX(3px)}
+@media(max-width:1000px){.sheet{margin:0 auto}.note{max-width:78%}.note.left{align-self:flex-start}.note.right{align-self:flex-end;text-align:right}}
+@media(max-width:600px){.page-header{padding-top:40px}.page-title{font-size:clamp(51px,11vw,72px)}.notes{gap:32px}.note{max-width:100%}.note.right{text-align:left}.note-text{font-size:22px}.next-button-bottom{font-size:17px}.next-section{gap:12px}}
+</style>
+</head>
+<body><main class="sheet"><header class="running-head"><a class="micro" href="page-1.html#contents">← К оглавлению</a><p class="masthead">Birthday</p><p class="micro">Issue 19 / Love notes</p></header>
+<!-- Кнопка назад -->
+
+<!-- ============ ЗАГОЛОВОК ============ -->
+<header class="page-header"><p class="micro chapter-kicker">06 / Глава 5 · Love notes</p>
+<h1 class="page-title">What we love about Sabrina?</h1>
+<div class="page-divider"></div>
+</header>
+<!-- ============ ЗАПИСИ В ШАХМАТНОМ ПОРЯДКЕ ============ -->
+<section class="notes">
+<!-- Запись 1 — слева -->
+<div class="note left"><span class="note-number micro">01 / With love</span>
+<h2 class="note-title">Она очень добрая</h2>
+<p class="note-text">
+                Доброту человека можно увидеть по тому, как
+                он относится к окружающим его существам, а именно
+                к животным. Сабрина тот человек, который погладит
+                всех одиноких и бездомных животных
+            </p>
+</div>
+<!-- Запись 2 — справа -->
+<div class="note right"><span class="note-number micro">02 / With love</span>
+<h2 class="note-title">Она прекрасный друг</h2>
+<p class="note-text">
+                Это человек, который пройдёт с вами огонь и воду,
+                обсудит все интересные и не очень вещи, а главное
+                согласится на любой досуг, будь то культурный поход в театр или
+                поездка в другой город на автобусе
+            </p>
+</div>
+<!-- Запись 3 — слева -->
+<div class="note left"><span class="note-number micro">03 / With love</span>
+<h2 class="note-title">Она всегда поддержит</h2>
+<p class="note-text">
+                Если у Вас нет настроения жить, то у Сабрины всегда
+                есть запас мемов, для оказания вам экстренной помощи,
+                но иногда такая помощь нужна ей самой
+            </p>
+</div>
+<!-- Запись 4 — справа -->
+<div class="note right"><span class="note-number micro">04 / With love</span>
+<h2 class="note-title">Она очень творческая</h2>
+<p class="note-text">
+                Учится на архитектора и строит макеты прекрасных домиков!
+                А параллельно с этим поёт, играет музыку и находит время
+                для себя)
+            </p>
+</div>
+</section>
+<!-- ============ ФИНАЛЬНОЕ ФОТО ============ -->
+<section class="final-photo-section">
+<div class="final-photo">
+<img alt="Sabrina" src="final-photo.jpg"/>
+</div>
+</section>
+<!-- ============ КНОПКА НА СЛЕДУЮЩУЮ СТРАНИЦУ ============ -->
+<div class="next-section"><a class="micro" href="page-6.html">← Предыдущая</a><span class="folio">07</span>
+<a class="next-button-bottom" href="page-8.html">К интерактивной странице →</a>
+</div>
+</main><script>const portrait=document.querySelector('.final-photo img');portrait.addEventListener('error',()=>{portrait.style.visibility='hidden';portrait.parentElement.style.display='grid';portrait.parentElement.setAttribute('aria-label','Место для фото Сабрины');},{once:true});</script></body>
+</html>

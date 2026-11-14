@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Натальная карта — Birthday 19th edition</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #12071f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ============ ОБЩИЕ ФОНОВЫЕ СЕКЦИИ ============ */
+        .section {
+            position: relative;
+            background-image: url('6.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+            .section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(35, 8, 60, 0.78);
+                z-index: 1;
+            }
+
+            .section > * {
+                position: relative;
+                z-index: 2;
+            }
+
+        /* ============ ОБЛОЖКА ГЛАВЫ ============ */
+        .hero {
+            min-height: 100vh;
+            padding: 60px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero .headline {
+            font-size: 110pt;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            text-shadow: 0 0 40px rgba(180, 130, 255, 0.6);
+            animation: fadeInDown 0.8s ease-out;
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            font-size: 26pt;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(230, 210, 255, 0.85);
+            letter-spacing: 0.04em;
+            animation: fadeInDown 0.8s ease-out 0.15s both;
+            margin-bottom: 40px;
+        }
+
+        .hero .divider {
+            width: 120px;
+            height: 1px;
+            background: rgba(200, 170, 255, 0.5);
+            margin-bottom: 50px;
+            animation: expand 0.6s ease-out 0.25s both;
+        }
+
+        .hero .content {
+            max-width: 600px;
+            font-size: 22pt;
+            font-weight: 400;
+            color: rgba(240, 230, 255, 0.9);
+            line-height: 1.75;
+            animation: fadeInUp 0.8s ease-out 0.35s both;
+        }
+
+            .hero .content p {
+                margin-bottom: 24px;
+            }
+
+            .hero .content .highlight {
+                font-style: italic;
+                color: #d9b8ff;
+            }
+
+        /* Правая колонка — карта */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+            .hero-image img {
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                object-fit: contain;
+                filter: drop-shadow(0 0 60px rgba(180, 130, 255, 0.6));
+                animation: fadeInRight 0.9s ease-out 0.25s both;
+                transition: transform 0.4s ease, filter 0.4s ease;
+            }
+
+                .hero-image img:hover {
+                    transform: scale(1.05) rotate(3deg);
+                    filter: drop-shadow(0 0 80px rgba(200, 150, 255, 1));
+                }
+
+        /* ============ ПЛАНЕТЫ ============ */
+        .planets {
+            padding: 120px 80px;
+        }
+
+        .section-title {
+            font-size: 70pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(180, 130, 255, 0.5);
+        }
+
+        .section-subtitle {
+            font-size: 22pt;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(220, 200, 255, 0.7);
+            text-align: center;
+            margin-bottom: 90px;
+            letter-spacing: 0.05em;
+        }
+
+        /* ---------- КАРТОЧКА ПЛАНЕТЫ ---------- */
+        .planet {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 50px;
+            align-items: center;
+            padding: 50px 0;
+            border-bottom: 1px solid rgba(200, 170, 255, 0.18);
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+            .planet:last-child {
+                border-bottom: none;
+            }
+
+        .planet-image-wrap {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+        }
+
+            .planet-image-wrap::before {
+                content: '';
+                position: absolute;
+                width: 160%;
+                height: 160%;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(180, 130, 255, 0.35) 0%, transparent 65%);
+                z-index: 0;
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                opacity: 0.6;
+            }
+
+            .planet-image-wrap img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 50%;
+                position: relative;
+                z-index: 1;
+                transition: transform 0.4s ease, filter 0.4s ease;
+                filter: drop-shadow(0 0 10px rgba(160, 100, 255, 0.4));
+            }
+
+        .planet:hover .planet-image-wrap img {
+            transform: scale(1.15) rotate(8deg);
+            filter: drop-shadow(0 0 35px rgba(200, 150, 255, 1)) drop-shadow(0 0 60px rgba(160, 100, 255, 0.7));
+        }
+
+        .planet:hover .planet-image-wrap::before {
+            opacity: 1;
+            transform: scale(1.15);
+        }
+
+        .planet-info h3 {
+            font-size: 56pt;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: 0.02em;
+        }
+
+        .planet-meta {
+            font-size: 20pt;
+            font-style: italic;
+            color: #c9a8ff;
+            margin-bottom: 25px;
+            letter-spacing: 0.03em;
+        }
+
+            .planet-meta .dot {
+                opacity: 0.5;
+                margin: 0 12px;
+            }
+
+        .planet-text {
+            font-size: 17pt;
+            font-weight: 400;
+            color: rgba(240, 230, 255, 0.88);
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        /* ============ АСЦЕНДЕНТ И MC ============ */
+        .asc-mc {
+            padding: 140px 80px;
+        }
+
+            .asc-mc .section-title {
+                margin-bottom: 90px;
+            }
+
+        .asc-mc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(60, 25, 100, 0.35);
+            border: 1px solid rgba(200, 170, 255, 0.25);
+            border-radius: 12px;
+            padding: 50px 45px;
+            backdrop-filter: blur(6px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            animation: fadeInUp 0.7s ease-out both;
+        }
+
+            .card:hover {
+                transform: translateY(-8px);
+                border-color: rgba(220, 190, 255, 0.6);
+                box-shadow: 0 20px 60px rgba(150, 90, 220, 0.35);
+            }
+
+        .card-label {
+            font-size: 16pt;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #c9a8ff;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 52pt;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .card-sign {
+            font-size: 30pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #d9b8ff;
+            margin-bottom: 10px;
+        }
+
+        .card-degree {
+            font-size: 22pt;
+            font-weight: 700;
+            color: rgba(230, 210, 255, 0.8);
+            letter-spacing: 0.05em;
+            margin-bottom: 30px;
+        }
+
+        .card-text {
+            font-size: 17pt;
+            font-weight: 400;
+            color: rgba(240, 230, 255, 0.88);
+            line-height: 1.7;
+        }
+
+        /* Владыка гороскопа */
+        .ruler-block {
+            margin-top: 100px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background: rgba(80, 35, 130, 0.4);
+            border: 1px solid rgba(200, 170, 255, 0.4);
+            border-radius: 12px;
+            padding: 70px 60px;
+            backdrop-filter: blur(8px);
+            animation: fadeInUp 0.7s ease-out 0.15s both;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+            .ruler-block:hover {
+                box-shadow: 0 0 80px rgba(180, 130, 255, 0.5);
+                transform: scale(1.01);
+            }
+
+            .ruler-block .card-label {
+                margin-bottom: 25px;
+            }
+
+            .ruler-block h3 {
+                font-size: 90pt;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 1;
+                margin-bottom: 20px;
+                text-shadow: 0 0 40px rgba(200, 150, 255, 0.7);
+            }
+
+        .ruler-score {
+            font-size: 30pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #d9b8ff;
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+        }
+
+        .ruler-text {
+            font-size: 18pt;
+            font-weight: 400;
+            color: rgba(240, 230, 255, 0.9);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ============ РЕЙТИНГ ПЛАНЕТ ============ */
+        .rating {
+            padding: 140px 80px 180px;
+        }
+
+            .rating .section-title {
+                margin-bottom: 90px;
+            }
+
+        .rating-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .rating-row {
+            display: grid;
+            grid-template-columns: 80px 280px 1fr 100px;
+            gap: 30px;
+            align-items: center;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+            .rating-row:nth-child(1) {
+                animation-delay: 0.05s;
+            }
+
+            .rating-row:nth-child(2) {
+                animation-delay: 0.1s;
+            }
+
+            .rating-row:nth-child(3) {
+                animation-delay: 0.15s;
+            }
+
+            .rating-row:nth-child(4) {
+                animation-delay: 0.2s;
+            }
+
+            .rating-row:nth-child(5) {
+                animation-delay: 0.25s;
+            }
+
+            .rating-row:nth-child(6) {
+                animation-delay: 0.3s;
+            }
+
+            .rating-row:nth-child(7) {
+                animation-delay: 0.35s;
+            }
+
+        .rating-symbol {
+            font-size: 44pt;
+            color: #d9b8ff;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(200, 150, 255, 0.6);
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        .rating-row:hover .rating-symbol {
+            transform: scale(1.3) rotate(15deg);
+            color: #ffffff;
+        }
+
+        .rating-name {
+            font-size: 36pt;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.02em;
+        }
+
+        .rating-bar {
+            height: 8px;
+            background: rgba(200, 170, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .rating-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7a3fbf 0%, #d9b8ff 100%);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(200, 150, 255, 0.8);
+            transform-origin: left;
+            animation: fillBar 0.8s ease-out both;
+        }
+
+        .rating-row:nth-child(1) .rating-bar-fill {
+            animation-delay: 0.15s;
+        }
+
+        .rating-row:nth-child(2) .rating-bar-fill {
+            animation-delay: 0.2s;
+        }
+
+        .rating-row:nth-child(3) .rating-bar-fill {
+            animation-delay: 0.25s;
+        }
+
+        .rating-row:nth-child(4) .rating-bar-fill {
+            animation-delay: 0.3s;
+        }
+
+        .rating-row:nth-child(5) .rating-bar-fill {
+            animation-delay: 0.35s;
+        }
+
+        .rating-row:nth-child(6) .rating-bar-fill {
+            animation-delay: 0.4s;
+        }
+
+        .rating-row:nth-child(7) .rating-bar-fill {
+            animation-delay: 0.45s;
+        }
+
+        .rating-score {
+            font-size: 32pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #d9b8ff;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+
+        /* ============ КНОПКА ВЫХОДА ============ */
+        .back-button {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(200, 170, 255, 0.5);
+            background: rgba(30, 10, 50, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            z-index: 100;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .back-button:hover {
+                background: rgba(180, 130, 255, 0.25);
+                border-color: rgba(220, 190, 255, 0.9);
+                transform: translateX(4px);
+                box-shadow: 0 0 25px rgba(180, 130, 255, 0.5);
+            }
+
+            .back-button .arrow {
+                font-style: normal;
+                transition: transform 0.2s ease;
+            }
+
+            .back-button:hover .arrow {
+                transform: translateX(4px);
+            }
+
+        /* ============ АНИМАЦИИ ============ */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes expand {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+
+            to {
+                width: 120px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fillBar {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* ============ АДАПТИВНОСТЬ ============ */
+        @media (max-width: 900px) {
+            .hero {
+                padding: 100px 30px 60px;
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+                .hero .headline {
+                    font-size: 55pt;
+                }
+
+                .hero .subtitle {
+                    font-size: 20pt;
+                }
+
+                .hero .content {
+                    font-size: 18pt;
+                }
+
+            .hero-image img {
+                max-width: 100%;
+            }
+
+            .planets,
+            .asc-mc,
+            .rating {
+                padding: 80px 30px;
+            }
+
+            .section-title {
+                font-size: 44pt;
+            }
+
+            .section-subtitle {
+                font-size: 18pt;
+                margin-bottom: 60px;
+            }
+
+            .planet {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 40px 0;
+                text-align: center;
+            }
+
+            .planet-info h3 {
+                font-size: 40pt;
+            }
+
+            .planet-text {
+                font-size: 16pt;
+            }
+
+            .asc-mc-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .card {
+                padding: 40px 30px;
+            }
+
+                .card h3 {
+                    font-size: 40pt;
+                }
+
+            .ruler-block h3 {
+                font-size: 60pt;
+            }
+
+            .rating-row {
+                grid-template-columns: 60px 1fr 80px;
+                gap: 15px;
+            }
+
+            .rating-bar {
+                display: none;
+            }
+
+            .rating-name {
+                font-size: 26pt;
+            }
+
+            .rating-score {
+                font-size: 22pt;
+            }
+        }
+
+        /* ============ КНОПКА ПЕРЕХОДА ВНИЗУ ============ */
+        .next-section {
+            text-align: center;
+            padding: 80px 40px 120px;
+        }
+
+        .next-button-bottom {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 45px;
+            border: 1px solid rgba(200, 170, 255, 0.5);
+            background: rgba(30, 10, 50, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            transition: all 0.3s ease;
+        }
+
+            .next-button-bottom:hover {
+                background: rgba(180, 130, 255, 0.25);
+                border-color: rgba(220, 190, 255, 0.9);
+                transform: translateX(8px);
+                box-shadow: 0 0 40px rgba(180, 130, 255, 0.5);
+            }
+
+            .next-button-bottom .arrow {
+                font-style: normal;
+                transition: transform 0.3s ease;
+            }
+
+            .next-button-bottom:hover .arrow {
+                transform: translateX(8px);
+            }
+    
+        /* Small editorial refinements; original space background and motion retained. */
+        :root{--cosmic-paper:#f3ede6;--cosmic-line:rgba(215,190,255,.28);--cosmic-gutter:clamp(22px,5.5vw,90px)}
+        body{-webkit-font-smoothing:antialiased}
+        ::selection{background:#d9b8ff;color:#12071f}
+        .hero{padding:100px var(--cosmic-gutter) 85px;gap:clamp(30px,5vw,80px);grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+        .hero-text,.planet-info,.card{min-width:0}
+        .chapter-kicker{font-family:Arial,sans-serif;font-size:10px;line-height:1.5;letter-spacing:.2em;text-transform:uppercase;color:#cab3df;margin-bottom:30px}
+        .hero .headline{font-size:clamp(72px,9.5vw,145px);font-weight:500;line-height:.88;letter-spacing:-.045em;color:var(--cosmic-paper);margin-bottom:25px}
+        .hero .subtitle{font-size:clamp(25px,2.6vw,36px);letter-spacing:.01em;margin-bottom:28px}
+        .hero .divider{margin-bottom:30px}
+        .hero .content{font-size:clamp(21px,1.9vw,27px);line-height:1.5;max-width:35ch}
+        .hero .content p{margin-bottom:20px}
+        .hero-image{min-width:0}.hero-image img{max-width:560px}
+        .planets,.asc-mc,.rating{padding:90px var(--cosmic-gutter)}
+        .section-title{font-size:clamp(47px,6.5vw,88px);font-weight:400;letter-spacing:-.035em;line-height:1.02;color:var(--cosmic-paper)}
+        .section-subtitle{font-size:clamp(22px,2.3vw,29px);letter-spacing:0;line-height:1.3;margin-bottom:50px}
+        .planet{max-width:1200px;margin-inline:auto;grid-template-columns:230px minmax(0,1fr);gap:clamp(25px,4vw,60px);padding-block:42px;border-bottom-color:var(--cosmic-line)}
+        .planet-image-wrap{width:190px;height:190px}
+        .planet-info h3{font-size:clamp(37px,4.2vw,59px);font-weight:500;letter-spacing:-.02em;margin-bottom:12px}
+        .planet-meta{font-size:22px;line-height:1.4;letter-spacing:.01em;margin-bottom:18px}
+        .planet-text,.card-text{font-size:22px;line-height:1.5;max-width:62ch}
+        .asc-mc .section-title,.rating .section-title{margin-bottom:48px}
+        .asc-mc-grid{gap:32px;max-width:1200px}
+        .card{padding:38px 35px;border-radius:6px;border-color:var(--cosmic-line)}
+        .card-label{font-family:Arial,sans-serif;font-size:10px;font-style:normal;letter-spacing:.2em;line-height:1.5;margin-bottom:20px}
+        .card h3{font-size:62px;font-weight:500;letter-spacing:-.025em}
+        .card-sign{font-size:34px}.card-degree{font-size:23px;font-weight:400;margin-bottom:24px;font-variant-numeric:tabular-nums}
+        .ruler-block{padding:48px clamp(25px,4vw,60px);margin-top:55px;border-radius:6px;max-width:1000px}
+        .ruler-block h3{font-size:clamp(52px,7.4vw,100px);font-weight:500;letter-spacing:-.025em}
+        .ruler-score{font-size:32px;font-weight:400;letter-spacing:0;margin-bottom:25px}
+        .ruler-text{font-size:23px;line-height:1.5;max-width:54ch}
+        .rating-list{gap:0;max-width:980px}
+        .rating-row{grid-template-columns:65px minmax(140px,230px) minmax(0,1fr) 65px;gap:24px;padding:20px 0;border-bottom:1px solid var(--cosmic-line)}
+        .rating-row:last-child{border-bottom:0}
+        .rating-symbol{font-size:43px}.rating-name{font-size:34px;font-weight:400;letter-spacing:0}.rating-score{font-size:31px;font-weight:400;letter-spacing:0;font-variant-numeric:tabular-nums}
+        .rating-bar{height:5px}
+        .back-button{font-size:19px;padding:8px 14px;top:22px;right:22px;border-radius:3px;z-index:100}
+        .next-section{padding:30px var(--cosmic-gutter) 35px}
+        .next-button-bottom{font-size:24px;letter-spacing:.01em;padding:15px 28px;border-radius:3px}
+        .chapter-folio{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--cosmic-line);padding-top:22px;margin-top:45px;font-family:Arial,sans-serif;font-size:9px;letter-spacing:.18em;line-height:1.5;text-transform:uppercase;color:#cab3df}
+        .chapter-folio span{font-family:'Cormorant Garamond',serif;font-size:27px;font-style:italic;letter-spacing:0}
+        a:focus-visible{outline:2px solid #d9b8ff;outline-offset:5px}
+        @media(max-width:900px){.hero{grid-template-columns:minmax(0,1fr);padding-top:105px;gap:35px}.hero .headline{font-size:clamp(74px,14vw,120px)}.hero .content{max-width:48ch}.hero-image img{max-width:min(500px,90%)}.planets,.asc-mc,.rating{padding-block:65px}.planet{grid-template-columns:150px minmax(0,1fr);text-align:left;gap:25px}.planet-image-wrap{width:140px;height:140px}.planet-meta{font-size:21px}.planet-meta .dot{margin-inline:6px}.asc-mc-grid{grid-template-columns:1fr}.rating-row{grid-template-columns:45px minmax(120px,1fr) minmax(60px,1fr) 45px;gap:16px}.rating-bar{display:block}}
+        @media(max-width:560px){.chapter-kicker{font-size:8px;letter-spacing:.15em;margin-bottom:24px}.hero .headline{font-size:80px}.hero .content{font-size:23px}.section-title{font-size:47px}.section-subtitle{font-size:23px;margin-bottom:30px}.planet{grid-template-columns:1fr;text-align:center;gap:24px;padding-block:32px}.planet-image-wrap{width:160px;height:160px}.planet-info h3{font-size:43px}.planet-text{text-align:left;font-size:22px}.planet-meta{font-size:21px}.card{padding:30px 24px}.card-text,.ruler-text{font-size:22px}.ruler-block{padding-inline:24px}.rating-row{grid-template-columns:35px minmax(0,1fr) 42px;gap:10px;padding-block:18px}.rating-name{font-size:29px}.rating-symbol{font-size:35px}.rating-score{font-size:28px}.rating-bar{display:block;grid-row:2;grid-column:2/4;width:100%}.rating-score{grid-column:3;grid-row:1}.back-button{font-size:17px;top:16px;right:16px}.next-button-bottom{font-size:21px;padding:13px 18px}.chapter-folio{font-size:8px;letter-spacing:.12em}}
+        @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.planet-image-wrap img[data-asset]{border-radius:0}
+</style>
+</head>
+<body>
+<!-- Кнопка выхода -->
+<a class="back-button" href="page-1.html">
+        Назад к содержанию
+        <span class="arrow">→</span>
+</a>
+<!-- ============ ОБЛОЖКА ГЛАВЫ ============ -->
+<section class="section hero">
+<!-- ЛЕВАЯ КОЛОНКА — ТЕКСТ -->
+<div class="hero-text"><p class="chapter-kicker">Birthday · Issue 19 / Chapter 04</p>
+<h1 class="headline">NATAL<br/>CHART</h1>
+<p class="subtitle">Написано на звёздах</p>
+<div class="divider"></div>
+<div class="content">
+<p>
+                    Астрологическая карта на момент рождения — расположение планет
+                    по знакам и домам. Каждая планета рассказывает свою часть
+                    её истории.
+                </p>
+<p>
+                    Ниже — <span class="highlight">разбор каждой планеты</span>:
+                    знак, дом и то, что это говорит о характере, талантах и судьбе.
+                </p>
+</div>
+</div>
+<!-- ПРАВАЯ КОЛОНКА — КАРТА -->
+<div class="hero-image">
+<img alt="Натальная карта" src="natal-chart.png"/>
+</div>
+</section>
+<!-- ============ ПЛАНЕТЫ ============ -->
+<section class="section planets">
+<h2 class="section-title">Планеты</h2>
+<p class="section-subtitle">Десять космических сил, формирующих историю</p>
+<!-- СОЛНЦЕ -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Солнце" data-asset="sun" decoding="async" height="1254" loading="lazy" src="assets-generated/153f7e8f37d3ae7b26b0.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>СОЛНЦЕ</h3>
+<p class="planet-meta">Sun <span class="dot">·</span> В Скорпионе <span class="dot">·</span> В 7 доме</p>
+<p class="planet-text">
+                    Сильная воля, огромный внутренний потенциал, индивидуализм,
+                    тяга к мистике и оккультным наукам. Скорпионы всю жизнь
+                    борются с внутренними противоречиями: одна часть стремится
+                    к возвышенному, другая к низкому. Самозащита у них одна:
+                    настороженность и замкнутость.
+                </p>
+</div>
+</div>
+<!-- ЛУНА -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Луна" data-asset="moon" decoding="async" height="1254" loading="lazy" src="assets-generated/473ebad809b930461f52.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>ЛУНА</h3>
+<p class="planet-meta">Moon <span class="dot">·</span> В Овне <span class="dot">·</span> В 12 доме</p>
+<p class="planet-text">
+                    Большая активность души и чувств. Подпитываемая марсианской
+                    энергией, Луна вынуждает человека к напряжённой чрезмерной
+                    деятельности. Большое честолюбие, импульсивность, сильные
+                    страсти, страсть к сенсациям. Девиз — «всё или ничего».
+                </p>
+</div>
+</div>
+<!-- МЕРКУРИЙ -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Меркурий" data-asset="mercury" decoding="async" height="1254" loading="lazy" src="assets-generated/fbc9781143a55f49cec9.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>МЕРКУРИЙ</h3>
+<p class="planet-meta">Mercury <span class="dot">·</span> В Скорпионе <span class="dot">·</span> В 7 доме</p>
+<p class="planet-text">
+                    Превосходный интеллект, проницательность, дар убеждения,
+                    острый, резкий, боевой, даже агрессивный тип мышления.
+                    Находчивость, остроумие, изобретательский дар. Ум психолога,
+                    чутьё сыщика, острота критика. Особая магия слова,
+                    таинственность и неуловимость. Интерес ко всему тайному.
+                </p>
+</div>
+</div>
+<!-- ВЕНЕРА -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Венера" data-asset="venus" decoding="async" height="1254" loading="lazy" src="assets-generated/36d91d7d65e783ce1065.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>ВЕНЕРА</h3>
+<p class="planet-meta">Venus <span class="dot">·</span> В Весах <span class="dot">·</span> В 6 доме</p>
+<p class="planet-text">
+                    Домицил. Утончённые чувства, стремление к внутренней и
+                    внешней гармонии. Тонкая, добрая, нежная и любвеобильная
+                    душа. Сильное эстетическое чувство, деликатность, учтивость,
+                    беспредельное дружелюбие. Часто улучшают своё положение
+                    через удачный брак.
+                </p>
+</div>
+</div>
+<!-- МАРС -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Марс" data-asset="mars" decoding="async" height="1254" loading="lazy" src="assets-generated/88ad2d5637e1ef2e56a6.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>МАРС</h3>
+<p class="planet-meta">Mars <span class="dot">·</span> В Раке <span class="dot">·</span> В 3 доме</p>
+<p class="planet-text">
+                    Падение. Действие через эмоции, защиту дома и семьи.
+                    Капризность воли, зависимость от настроения. Сильная
+                    привязанность, ревность. При поражении: истеричность,
+                    скрытая агрессия.
+                </p>
+</div>
+</div>
+<!-- ЮПИТЕР -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Юпитер" data-asset="jupiter" decoding="async" height="1254" loading="lazy" src="assets-generated/5cd8171682524fbfc9f5.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>ЮПИТЕР</h3>
+<p class="planet-meta">Jupiter <span class="dot">·</span> В Стрельце <span class="dot">·</span> В 9 доме</p>
+<p class="planet-text">
+                    Домицил; философ, миссионер, путешественник. Юпитер
+                    в Стрельце раскрывается полностью: широта взглядов,
+                    любовь к дальним странам, тяга к высшему знанию,
+                    дух проповедника.
+                </p>
+</div>
+</div>
+<!-- САТУРН -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Сатурн" data-asset="saturn" decoding="async" height="1254" loading="lazy" src="assets-generated/d3beef7e7e6d3b3ee410.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>САТУРН</h3>
+<p class="planet-meta">Saturn <span class="dot">·</span> В Деве <span class="dot">·</span> В 6 доме</p>
+<p class="planet-text">
+                    Сатурн в Деве усиливает аналитические и методические
+                    качества знака. Человек становится педантичным мастером
+                    деталей, незаменимым специалистом в своей области.
+                    Сильное чувство долга, любовь к точной работе, склонность
+                    к научной или медицинской деятельности.
+                </p>
+</div>
+</div>
+<!-- УРАН -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Уран" data-asset="uranus" decoding="async" height="1254" loading="lazy" src="assets-generated/3697c96787d05aac8ff1.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>УРАН</h3>
+<p class="planet-meta">Uranus <span class="dot">·</span> В Рыбах <span class="dot">·</span> В 12 доме</p>
+<p class="planet-text">
+                    Эпоха духовных революций, развития мистических
+                    и нетрадиционных течений. Поколение, чувствующее тонкие
+                    планы и работающее с темами коллективного бессознательного.
+                </p>
+</div>
+</div>
+<!-- НЕПТУН -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Нептун" data-asset="neptune" decoding="async" height="1254" loading="lazy" src="assets-generated/37a1862b449ae69bd8a6.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>НЕПТУН</h3>
+<p class="planet-meta">Neptune <span class="dot">·</span> В Водолее <span class="dot">·</span> В 11 доме</p>
+<p class="planet-text">
+                    Экзальтация. Эпоха новой духовности, глобальных мистических
+                    движений, технологизации сознания (интернет, виртуальные
+                    миры). Нептун в экзальтации работает максимально.
+                </p>
+</div>
+</div>
+<!-- ПЛУТОН -->
+<div class="planet">
+<div class="planet-image-wrap">
+<img alt="Плутон" data-asset="pluto" decoding="async" height="1254" loading="lazy" src="assets-generated/c2699cbcda512084b872.png" width="1254"/>
+</div>
+<div class="planet-info">
+<h3>ПЛУТОН</h3>
+<p class="planet-meta">Pluto <span class="dot">·</span> В Стрельце <span class="dot">·</span> В 9 доме</p>
+<p class="planet-text">
+                    Поколение глобализации и идеологического обновления
+                    (1995–2008). Плутон в Стрельце трансформирует религию,
+                    философию, образование, мировые связи.
+                </p>
+</div>
+</div>
+</section>
+<!-- ============ АСЦЕНДЕНТ И MC ============ -->
+<section class="section asc-mc">
+<h2 class="section-title">Асцендент и MC</h2>
+<div class="asc-mc-grid">
+<!-- АСЦЕНДЕНТ -->
+<div class="card">
+<p class="card-label">Асцендент</p>
+<h3>Asc</h3>
+<p class="card-sign">Овен</p>
+<p class="card-degree">26°34′</p>
+<p class="card-text">
+                    Внешний облик и первое впечатление. Первое впечатление —
+                    напор и уверенность в себе. Атлетическое телосложение,
+                    длинная шея, острый пронзительный взгляд. На лице часто
+                    заметный шрам, выразительный нос, густые брови. Волосы
+                    жёсткие — каштановые, рыжие или льняные, глаза серо-зелёные
+                    или голубые. В контакт входит первым, ждать не умеет,
+                    компромисса не признаёт. Личность оформляется рано: своего
+                    пика достигает уже к 25–30 годам.
+                </p>
+</div>
+<!-- MC -->
+<div class="card">
+<p class="card-label">Середина неба</p>
+<h3>MC</h3>
+<p class="card-sign">Козерог</p>
+<p class="card-degree">13°06′</p>
+<p class="card-text">
+                    Публичная роль и вершина карьеры. Карьера долгая,
+                    поэтапная, с ясной вертикалью. Профессии: государственная
+                    служба, крупные корпорации, управление, строительство,
+                    всё, где нужна ответственность и терпение. Признание
+                    приходит поздно — часто после 40 лет — но приходит прочно
+                    и надолго. Не любит демонстративности, ценит должность
+                    и результат. Публичный образ — серьёзный, взрослый,
+                    консервативный. Один из немногих, кто растёт до самой
+                    старости.
+                </p>
+</div>
+</div>
+<!-- ВЛАДЫКА ГОРОСКОПА -->
+<div class="ruler-block">
+<p class="card-label">Владыка гороскопа</p>
+<h3>ЮПИТЕР</h3>
+<p class="ruler-score">82 / 100</p>
+<p class="ruler-text">
+                Карта философа-учителя, устремлённая к росту и смыслу.
+                Через Юпитер — знание, вера, путешествие, покровительство.
+                Судьба ведёт туда, где нужно учить, наставлять, расширять
+                горизонт: педагогика, право, издание, международное дело,
+                крупный бизнес. Успех приходит через щедрость, а не через
+                мелочный расчёт. Часто в жизни появляется покровитель или,
+                наоборот, сам становится покровителем для других. Периоды
+                сильных транзитов Юпитера — время удачи и подъёма.
+            </p>
+</div>
+</section>
+<!-- ============ РЕЙТИНГ ПЛАНЕТ ============ -->
+<section class="section rating">
+<h2 class="section-title">Рейтинг планет</h2>
+<div class="rating-list">
+<div class="rating-row">
+<span class="rating-symbol">♃</span>
+<span class="rating-name">Юпитер</span>
+<div class="rating-bar"><div class="rating-bar-fill" style="width: 82%;"></div></div>
+<span class="rating-score">82</span>
+</div>
+<div class="rating-row">
+<span class="rating-symbol">♀</span>
+<span class="rating-name">Венера</span>
+<div class="rating-bar"><div class="rating-bar-fill" style="width: 80%;"></div></div>
+<span class="rating-score">80</span>
+</div>
+<div class="rating-row">
+<span class="rating-symbol">☿</span>
+<span class="rating-name">Меркурий</span>
+<div class="rating-bar"><div class="rating-bar-fill" style="width: 66%;"></div></div>
+<span class="rating-score">66</span>
+</div>
+<div class="rating-row">
+<span class="rating-symbol">♄</span>
+<span class="rating-name">Сатурн</span>
+<div class="rating-bar"><div class="rating-bar-fill" style="width: 56%;"></div></div>
+<span class="rating-score">56</span>
+</div>
+<div class="rating-row">
+<span class="rating-symbol">☉</span>
+<span class="rating-name">Солнце</span>
+<div class="rating-bar"><div class="rating-bar-fill" style="width: 56%;"></div></div>
+<span class="rating-score">56</span>
+</div>
+<div class="rating-row">
+<span class="rating-symbol">☽</span>
+<span class="rating-name">Луна</span>
+<div class="rating-bar"><div class="rating-bar-fill" style="width: 51%;"></div></div>
+<span class="rating-score">51</span>
+</div>
+<div class="rating-row">
+<span class="rating-symbol">♂</span>
+<span class="rating-name">Марс</span>
+<div class="rating-bar"><div class="rating-bar-fill" style="width: 47%;"></div></div>
+<span class="rating-score">47</span>
+</div>
+</div>
+</section>
+<!-- ============ КНОПКА ПЕРЕХОДА НА СЛЕДУЮЩУЮ СТРАНИЦУ ============ -->
+<div class="next-section">
+<a class="next-button-bottom" href="page-7.html">
+            Перейти к следующей странице
+            <span class="arrow">→</span>
+</a>
+<p class="chapter-folio">Birthday / The cosmic issue <span>06</span></p></div>
+</body>
+</html>

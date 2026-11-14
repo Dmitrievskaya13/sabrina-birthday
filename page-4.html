@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Her vibe is... — Birthday 19th edition</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .page {
+            position: relative;
+        }
+
+        /* ============ СЕКЦИЯ 1: HER VIBE ============ */
+        .vibe-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 140px 40px 160px;
+            position: relative;
+        }
+
+        .vibe-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 100pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #000000;
+            text-align: center;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            animation: fadeInDown 0.8s ease-out 0.15s both;
+        }
+
+        .vibe-divider {
+            width: 140px;
+            height: 2px;
+            background: #000000;
+            margin: 40px auto 140px;
+            animation: expand 0.7s ease-out 0.35s both;
+        }
+
+        .vibe-circle-wrap {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .vibe-center {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: #7a2430;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+            animation: pulseCenter 2s ease-in-out infinite;
+            transition: transform 0.4s ease, background 0.4s ease;
+            user-select: none;
+        }
+
+            .vibe-center:hover {
+                transform: scale(1.1);
+                background: #5a1820;
+            }
+
+        @keyframes pulseCenter {
+            0%, 100% {
+                box-shadow: 0 0 30px rgba(122, 36, 48, 0.4), 0 0 0 0 rgba(122, 36, 48, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(122, 36, 48, 0.7), 0 0 0 30px rgba(122, 36, 48, 0);
+            }
+        }
+
+        .vibe-photo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 5px solid #ffffff;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
+            filter: grayscale(0.3);
+        }
+
+            .vibe-photo:hover {
+                filter: grayscale(0);
+                z-index: 20;
+            }
+
+        .vibe-circle-wrap.open .vibe-photo {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .vibe-circle-wrap.open .vibe-1 {
+            transform: translate(calc(-50% + 0px), calc(-50% - 330px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-2 {
+            transform: translate(calc(-50% + 233px), calc(-50% - 233px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-3 {
+            transform: translate(calc(-50% + 330px), calc(-50% + 0px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-4 {
+            transform: translate(calc(-50% + 233px), calc(-50% + 233px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-5 {
+            transform: translate(calc(-50% + 0px), calc(-50% + 330px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-6 {
+            transform: translate(calc(-50% - 233px), calc(-50% + 233px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-7 {
+            transform: translate(calc(-50% - 330px), calc(-50% + 0px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-8 {
+            transform: translate(calc(-50% - 233px), calc(-50% - 233px)) scale(1);
+        }
+
+        .vibe-circle-wrap.open .vibe-1 {
+            transition-delay: 0s;
+        }
+
+        .vibe-circle-wrap.open .vibe-2 {
+            transition-delay: 0.05s;
+        }
+
+        .vibe-circle-wrap.open .vibe-3 {
+            transition-delay: 0.1s;
+        }
+
+        .vibe-circle-wrap.open .vibe-4 {
+            transition-delay: 0.15s;
+        }
+
+        .vibe-circle-wrap.open .vibe-5 {
+            transition-delay: 0.2s;
+        }
+
+        .vibe-circle-wrap.open .vibe-6 {
+            transition-delay: 0.25s;
+        }
+
+        .vibe-circle-wrap.open .vibe-7 {
+            transition-delay: 0.3s;
+        }
+
+        .vibe-circle-wrap.open .vibe-8 {
+            transition-delay: 0.35s;
+        }
+
+        /* ============ СЕКЦИЯ 2: КИНОПЛЁНКА ============ */
+        .film-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .film-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 90pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #000000;
+            text-align: center;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            margin-bottom: 30px;
+        }
+
+        .film-divider {
+            width: 140px;
+            height: 2px;
+            background: #000000;
+            margin: 0 auto 60px;
+        }
+
+        .drag-hint {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #999999;
+            text-align: center;
+            margin-bottom: 70px;
+            letter-spacing: 0.05em;
+        }
+
+        .film-track {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            user-select: none;
+            cursor: grab;
+            overflow: visible;
+        }
+
+            .film-track.dragging {
+                cursor: grabbing;
+            }
+
+        .film-strip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 300px;
+            background: #111111;
+            border-top: 3px solid #000000;
+            border-bottom: 3px solid #000000;
+            border-right: 3px solid #000000;
+            display: flex;
+            align-items: stretch;
+            will-change: width;
+            overflow: hidden;
+        }
+
+            .film-strip::before,
+            .film-strip::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 28px;
+                background-color: #111111;
+                background-image: radial-gradient(circle, #ffffff 6px, transparent 7px);
+                background-size: 50px 28px;
+                background-position: 10px center;
+                background-repeat: repeat-x;
+                z-index: 2;
+            }
+
+            .film-strip::before {
+                top: 0;
+                border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+            }
+
+            .film-strip::after {
+                bottom: 0;
+                border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            }
+
+        .film-frames {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 40px;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            white-space: nowrap;
+        }
+
+        .frame {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 300px;
+            background: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+            .frame img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: grayscale(0.3) brightness(0.95);
+                transition: filter 0.4s ease;
+            }
+
+            .frame:hover img {
+                filter: grayscale(0) brightness(1);
+            }
+
+            .frame:hover {
+                transform: scale(1.05);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+                z-index: 5;
+            }
+
+        .frame-title {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 6px 8px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ============ СЕКЦИЯ 3: ПЛЕЙЛИСТ ============ */
+        .music-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 40px 60px;
+            position: relative;
+        }
+
+        .music-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 90pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #000000;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .music-divider {
+            width: 140px;
+            height: 2px;
+            background: #000000;
+            margin-bottom: 30px;
+        }
+
+        .music-hint {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #999999;
+            margin-bottom: 90px;
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .vinyls {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            padding-bottom: 320px;
+        }
+
+        .vinyl {
+            text-align: center;
+            cursor: default;
+            user-select: none;
+            position: relative;
+        }
+
+        .vinyl-disc {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, #333333 0%, #333333 8%, #1a1a1a 9%, #1a1a1a 14%, #111111 15%, #111111 24%, #1a1a1a 25%, #1a1a1a 30%, #111111 31%, #111111 40%, #1a1a1a 41%, #1a1a1a 46%, #111111 47%, #111111 56%, #1a1a1a 57%, #1a1a1a 62%, #111111 63%, #111111 72%, #1a1a1a 73%, #1a1a1a 78%, #111111 79%, #111111 88%, #1a1a1a 89%, #1a1a1a 94%, #111111 95%, #111111 100%);
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.6s ease;
+        }
+
+        .vinyl:hover .vinyl-disc {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .vinyl-disc::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #7a2430;
+            z-index: 1;
+        }
+
+        .vinyl-disc::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ffffff;
+            z-index: 2;
+        }
+
+        /* Выпадающая картинка под пластинкой */
+        .vinyl-cover {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -30px) scale(0.6);
+            width: 200px;
+            height: 260px;
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            z-index: 5;
+        }
+
+            .vinyl-cover img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .vinyl:hover .vinyl-cover {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+            pointer-events: auto;
+        }
+
+        /* ============ ЖИДКОЕ СТЕКЛО (тёмное) ============ */
+        .glass-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+            .glass-overlay.show {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+        .glass-card {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.85);
+            width: 90%;
+            max-width: 620px;
+            padding: 50px 50px 45px;
+            border-radius: 28px;
+            background: rgba(25, 15, 30, 0.75);
+            backdrop-filter: blur(35px) saturate(180%);
+            -webkit-backdrop-filter: blur(35px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+            .glass-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 50%;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
+                border-radius: 28px 28px 50% 50%;
+                pointer-events: none;
+            }
+
+        .glass-overlay.show .glass-card {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .glass-card .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32pt;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.3s ease, transform 0.3s ease;
+            z-index: 2;
+        }
+
+            .glass-card .close-btn:hover {
+                color: #ffffff;
+                transform: rotate(90deg);
+            }
+
+        .glass-card .film-cover {
+            width: 100%;
+            height: 260px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+            .glass-card .film-cover img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .glass-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44pt;
+            font-weight: 700;
+            font-style: italic;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            letter-spacing: 0.01em;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .glass-card .film-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .glass-card .film-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ============ КНОПКА ВНИЗУ ============ */
+        .next-section {
+            text-align: center;
+            padding: 60px 0 100px;
+        }
+
+        .next-button-bottom {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #000000;
+            text-decoration: none;
+            padding: 18px 45px;
+            border: 1px solid #000000;
+            background: #ffffff;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+            .next-button-bottom:hover {
+                background: #000000;
+                color: #ffffff;
+                transform: translateX(8px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            }
+
+            .next-button-bottom .arrow {
+                font-style: normal;
+                transition: transform 0.3s ease;
+            }
+
+            .next-button-bottom:hover .arrow {
+                transform: translateX(8px);
+            }
+
+        /* ============ КНОПКА НАЗАД ============ */
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #000000;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            z-index: 100;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .back-button:hover {
+                background: #000000;
+                color: #ffffff;
+                border-color: #000000;
+                transform: translateX(-4px);
+            }
+
+            .back-button .arrow {
+                font-style: normal;
+                transition: transform 0.2s ease;
+            }
+
+            .back-button:hover .arrow {
+                transform: translateX(-4px);
+            }
+
+        /* ============ АНИМАЦИИ ============ */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expand {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+
+            to {
+                width: 140px;
+                opacity: 1;
+            }
+        }
+
+        /* ============ АДАПТИВНОСТЬ ============ */
+        @media (max-width: 900px) {
+            .vibe-section {
+                padding: 100px 20px 120px;
+            }
+
+            .vibe-title {
+                font-size: 55pt;
+            }
+
+            .vibe-divider {
+                margin: 25px auto 70px;
+                width: 90px;
+            }
+
+            .vibe-circle-wrap {
+                width: 500px;
+                height: 500px;
+            }
+
+            .vibe-photo {
+                width: 110px;
+                height: 110px;
+                border-width: 3px;
+            }
+
+            .vibe-center {
+                width: 90px;
+                height: 90px;
+            }
+
+            .vibe-circle-wrap.open .vibe-1 {
+                transform: translate(calc(-50% + 0px), calc(-50% - 210px)) scale(1);
+            }
+
+            .vibe-circle-wrap.open .vibe-2 {
+                transform: translate(calc(-50% + 148px), calc(-50% - 148px)) scale(1);
+            }
+
+            .vibe-circle-wrap.open .vibe-3 {
+                transform: translate(calc(-50% + 210px), calc(-50% + 0px)) scale(1);
+            }
+
+            .vibe-circle-wrap.open .vibe-4 {
+                transform: translate(calc(-50% + 148px), calc(-50% + 148px)) scale(1);
+            }
+
+            .vibe-circle-wrap.open .vibe-5 {
+                transform: translate(calc(-50% + 0px), calc(-50% + 210px)) scale(1);
+            }
+
+            .vibe-circle-wrap.open .vibe-6 {
+                transform: translate(calc(-50% - 148px), calc(-50% + 148px)) scale(1);
+            }
+
+            .vibe-circle-wrap.open .vibe-7 {
+                transform: translate(calc(-50% - 210px), calc(-50% + 0px)) scale(1);
+            }
+
+            .vibe-circle-wrap.open .vibe-8 {
+                transform: translate(calc(-50% - 148px), calc(-50% - 148px)) scale(1);
+            }
+
+            .film-title {
+                font-size: 50pt;
+            }
+
+            .drag-hint {
+                font-size: 16pt;
+                margin-bottom: 50px;
+            }
+
+            .film-track {
+                height: 320px;
+            }
+
+            .film-frames {
+                gap: 12px;
+                padding: 30px 20px;
+            }
+
+            .frame {
+                width: 150px;
+                height: 220px;
+            }
+
+            .music-title {
+                font-size: 50pt;
+            }
+
+            .music-hint {
+                font-size: 16pt;
+                margin-bottom: 60px;
+            }
+
+            .vinyls {
+                gap: 40px;
+                padding-bottom: 240px;
+            }
+
+            .vinyl-disc {
+                width: 140px;
+                height: 140px;
+            }
+
+                .vinyl-disc::before {
+                    width: 44px;
+                    height: 44px;
+                }
+
+            .vinyl-cover {
+                width: 150px;
+                height: 200px;
+            }
+
+            .glass-card {
+                padding: 35px 30px 30px;
+            }
+
+                .glass-card .film-cover {
+                    height: 180px;
+                }
+
+                .glass-card h3 {
+                    font-size: 32pt;
+                }
+
+                .glass-card .film-description {
+                    font-size: 15pt;
+                }
+
+            .next-button-bottom {
+                font-size: 18pt;
+                padding: 14px 30px;
+            }
+        }
+    
+        /* Shared Birthday issue styling; original motion and interactions retained. */
+        :root{--paper:#eee9df;--ink:#171714;--wine:#682b37;--gold:#a28e63;--muted:#6e6b63;--rule:#aaa394;--margin:clamp(22px,4.5vw,70px)}
+        body{background:#161615;color:var(--ink);-webkit-font-smoothing:antialiased}
+        ::selection{background:#d9c89a;color:var(--ink)}
+        .page{max-width:1440px;margin:36px auto;background:var(--paper);padding:0 var(--margin);box-shadow:0 16px 80px #0003}
+        a{color:inherit;text-decoration:none}
+        .micro{font-family:Arial,sans-serif;font-size:10px;line-height:1.5;letter-spacing:.17em;text-transform:uppercase}
+        .running-head{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;padding:23px 0 19px;border-bottom:1px solid var(--ink)}
+        .running-head>:last-child{text-align:right}.masthead{font-size:26px;font-weight:500;line-height:1;text-transform:uppercase;letter-spacing:-.045em}
+        .back-link{padding:6px 0;justify-self:start}
+        .section-kicker{text-align:center;color:var(--muted);margin-bottom:23px}
+        .vibe-section{min-height:0;padding:65px 0 55px}
+        .vibe-title,.film-title,.music-title{font-size:clamp(58px,8.8vw,128px);font-weight:400;letter-spacing:-.055em;text-align:center;line-height:.98;color:var(--ink)}
+        .vibe-title{font-size:clamp(65px,10vw,145px)}
+        .vibe-divider{height:1px;background:var(--gold);margin:30px auto 25px}
+        .vibe-circle-wrap{--orbit:min(290px,29vw);width:min(820px,100%);height:auto;aspect-ratio:1;isolation:isolate}
+        .vibe-circle-wrap::before{content:'';position:absolute;width:70%;height:70%;border:1px solid #a28e633b;border-radius:50%;pointer-events:none}
+        .vibe-center{border:1px solid #a28e6388;background:var(--wine);color:var(--paper);font-family:inherit;width:clamp(70px,11vw,130px);height:clamp(70px,11vw,130px);flex-direction:column;box-shadow:0 0 0 10px #682b3708}
+        .vibe-center:hover{background:#51232b}.center-word{font-size:clamp(35px,5vw,60px);font-style:italic;line-height:.9;transform:translateX(-3px)}.center-label{font-size:7px;letter-spacing:.1em;margin-top:8px}
+        .vibe-photo{width:22%;height:25%;border:5px solid var(--paper);border-radius:0;box-shadow:0 10px 26px #17171424;background:#c6bfae;object-fit:cover}
+        .vibe-circle-wrap.open .vibe-1{transform:translate(-50%,calc(-50% - var(--orbit))) scale(1)}
+        .vibe-circle-wrap.open .vibe-2{transform:translate(calc(-50% + var(--orbit)*.707),calc(-50% - var(--orbit)*.707)) rotate(6deg) scale(1)}
+        .vibe-circle-wrap.open .vibe-3{transform:translate(calc(-50% + var(--orbit)),-50%) rotate(-3deg) scale(1)}
+        .vibe-circle-wrap.open .vibe-4{transform:translate(calc(-50% + var(--orbit)*.707),calc(-50% + var(--orbit)*.707)) rotate(5deg) scale(1)}
+        .vibe-circle-wrap.open .vibe-5{transform:translate(-50%,calc(-50% + var(--orbit))) rotate(-4deg) scale(1)}
+        .vibe-circle-wrap.open .vibe-6{transform:translate(calc(-50% - var(--orbit)*.707),calc(-50% + var(--orbit)*.707)) rotate(4deg) scale(1)}
+        .vibe-circle-wrap.open .vibe-7{transform:translate(calc(-50% - var(--orbit)),-50%) rotate(-5deg) scale(1)}
+        .vibe-circle-wrap.open .vibe-8{transform:translate(calc(-50% - var(--orbit)*.707),calc(-50% - var(--orbit)*.707)) rotate(-6deg) scale(1)}
+        .vibe-hint{font-size:19px;font-style:italic;color:var(--muted);text-align:center;margin-top:20px}
+        .film-section{min-height:0;margin:0 calc(-1 * var(--margin));padding:65px 0 45px;background:#191b1a;color:var(--paper)}
+        .film-section .section-kicker{color:#c5bfae}.film-title{color:var(--paper);font-size:clamp(55px,7.7vw,110px);padding-inline:20px}
+        .film-divider{height:1px;background:var(--gold);margin:24px auto 20px}.drag-hint{font-size:20px;color:#c5bfae;margin-bottom:35px;letter-spacing:.015em}
+        .film-track{height:375px;touch-action:pan-y;outline-offset:-4px}
+        .film-strip{max-width:100%;background:#111;border-color:#d9c89a55;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#a28e63 #222;scroll-behavior:smooth}
+        .film-strip::before,.film-strip::after{background-image:radial-gradient(circle,#eee9df 5px,transparent 6px);pointer-events:none}
+        .film-frames{gap:18px;padding:37px 32px}.frame{width:205px;height:290px;border-radius:0;border:1px solid #d9c89a66;background:#847a69}
+        .frame-title{border-radius:0;background:linear-gradient(transparent,#000b);left:0;right:0;bottom:0;padding:28px 12px 16px;font-weight:400;font-size:22px;line-height:1.1;white-space:normal;backdrop-filter:none}
+        .film-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px var(--margin) 0;color:#c5bfae}.film-controls button{border:1px solid #d9c89a66;width:42px;height:38px;background:transparent;color:var(--paper);font-size:22px;cursor:pointer}.film-controls button:hover{background:#d9c89a22}
+        .music-section{min-height:0;padding:70px 0 30px}.music-title{font-size:clamp(58px,8vw,110px)}.music-divider{height:1px;background:var(--gold);margin:26px auto 20px}.music-hint{font-size:20px;letter-spacing:0;color:var(--muted);margin-bottom:45px}
+        .vinyls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:clamp(18px,4vw,65px);padding:0 0 290px}.vinyl{min-width:0;cursor:pointer;outline-offset:8px}.vinyl-disc{width:100%;height:auto;aspect-ratio:1;box-shadow:0 12px 25px #1717142b}.vinyl-disc::before{background:var(--wine);width:30%;height:30%;border:1px solid #d9c89a88}.vinyl-disc::after{background:var(--paper);width:5%;height:5%}.vinyl-label{display:block;margin-top:20px;color:var(--muted)}
+        .vinyl-cover{top:100%;width:100%;height:auto;aspect-ratio:4/5;max-height:260px;border-radius:0;border:5px solid var(--paper);box-shadow:0 12px 25px #1717142b;background:#b2a48f;margin-top:18px}
+        .vinyl:focus-visible .vinyl-disc,.vinyl.active .vinyl-disc{animation:spin 4s linear infinite}
+        .vinyl:focus-visible .vinyl-cover,.vinyl.active .vinyl-cover{opacity:1;transform:translate(-50%,0) scale(1);pointer-events:auto}
+        .glass-card{background:rgba(25,27,26,.95);border-radius:0;border:1px solid #a28e6399;max-height:90svh;overflow:auto;padding:35px}.glass-card::before{border-radius:0}.glass-card .film-cover{border-radius:0;height:220px;margin-bottom:25px}.glass-card h3{font-size:clamp(32px,4.5vw,52px);font-weight:400;letter-spacing:-.025em}.glass-card .film-year{font-size:15px;color:#d9c89a;letter-spacing:.12em}.glass-card .film-description{font-size:21px;line-height:1.45}.glass-card .close-btn{border:0;background:#191b1acc;padding:0 6px;font-size:35px;right:15px;top:12px}
+        .page-footer{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;padding:24px 0;border-top:1px solid var(--ink)}.page-footer>:last-child{text-align:right}.folio{font-size:27px;font-style:italic}
+        a:focus-visible,button:focus-visible,.frame:focus-visible,.vinyl:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+        @media(max-width:900px){.page{margin:0 auto}.vibe-photo{border-width:3px}.film-track{height:310px}.film-frames{padding:33px 22px;gap:14px}.frame{width:160px;height:230px}.frame-title{font-size:20px}.vinyls{gap:25px;padding-bottom:220px}.center-label{font-size:6px;letter-spacing:.04em}}
+        @media(max-width:600px){.running-head{grid-template-columns:1fr auto}.running-head>:last-child{display:none}.masthead{font-size:24px}.micro{font-size:9px;letter-spacing:.11em}.vibe-section{padding:40px 0}.vibe-title{font-size:clamp(58px,13vw,78px)}.section-kicker{margin-bottom:18px}.vibe-circle-wrap{--orbit:29vw}.vibe-divider{margin-bottom:15px}.center-label{font-size:5px}.center-word{font-size:33px}.vibe-hint{font-size:17px;max-width:26ch}.film-section{padding-top:45px}.film-title{font-size:clamp(44px,11vw,66px)}.drag-hint{font-size:18px}.film-controls .micro{font-size:8px}.music-section{padding-top:45px}.music-title{font-size:56px}.music-hint{font-size:18px;max-width:28ch}.vinyls{grid-template-columns:repeat(2,minmax(0,1fr));gap:240px 30px;padding-bottom:235px;max-width:400px}.vinyl-cover{max-height:200px}.vinyl-label{font-size:9px}.glass-card{padding:35px 22px 25px}.glass-card .film-cover{height:160px}.glass-card .film-description{font-size:19px}.page-footer{gap:12px}.page-footer .micro{font-size:8px;letter-spacing:.04em}}
+        @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.film-strip{scroll-behavior:auto}}
+        @media print{body{background:var(--paper)}.page{margin:0;box-shadow:none}.running-head a,.page-footer a{visibility:hidden}.vibe-photo{opacity:1}.film-section{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+        /* A clean central button with a tactile press and an expanding ring. */
+        .vibe-center{padding:0;overflow:visible;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+        .vibe-center:active{transform:scale(.86)}
+        .vibe-center::after{content:'';position:absolute;inset:-2px;border:1px solid var(--gold);border-radius:50%;opacity:0;pointer-events:none}
+        .vibe-center.pressed{animation:vibePress .55s cubic-bezier(.2,.75,.25,1) both,pulseCenter 2s ease-in-out .55s infinite}
+        .vibe-center.pressed::after{animation:vibeRipple .7s ease-out both}
+        @keyframes vibePress{0%{transform:scale(1)}25%{transform:scale(.8)}62%{transform:scale(1.13)}100%{transform:scale(1)}}
+        @keyframes vibeRipple{0%{transform:scale(.85);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+        @media(prefers-reduced-motion:reduce){.vibe-center.pressed,.vibe-center.pressed::after{animation:none!important}}
+</style>
+</head>
+<body>
+<!-- Кнопка назад -->
+<div class="page"><header class="running-head"><a class="micro back-link" href="page-1.html#contents">← К оглавлению</a><p class="masthead">Birthday</p><p class="micro">Issue № 19 / Her vibe</p></header>
+<!-- ============ СЕКЦИЯ 1: HER VIBE ============ -->
+<section class="vibe-section"><p class="section-kicker micro">03 / Глава 2 · The moodboard</p>
+<h1 class="vibe-title">Her vibe is...</h1>
+<div class="vibe-divider"></div>
+<div class="vibe-circle-wrap" id="vibeCircle">
+<button aria-expanded="false" aria-label="Раскрыть фотографии" class="vibe-center" id="vibeCenter" type="button"></button>
+<img alt="Mood / 01" class="vibe-photo vibe-1" draggable="false" src="vibe-1.jpg"/>
+<img alt="Mood / 02" class="vibe-photo vibe-2" draggable="false" src="vibe-2.jpg"/>
+<img alt="Mood / 03" class="vibe-photo vibe-3" draggable="false" src="vibe-3.jpg"/>
+<img alt="Mood / 04" class="vibe-photo vibe-4" draggable="false" src="vibe-4.jpg"/>
+<img alt="Mood / 05" class="vibe-photo vibe-5" draggable="false" src="vibe-5.jpg"/>
+<img alt="Mood / 06" class="vibe-photo vibe-6" draggable="false" src="vibe-6.jpg"/>
+<img alt="Mood / 07" class="vibe-photo vibe-7" draggable="false" src="vibe-7.jpg"/>
+<img alt="Mood / 08" class="vibe-photo vibe-8" draggable="false" src="vibe-8.jpg"/>
+</div>
+</section>
+<!-- ============ СЕКЦИЯ 2: КИНОПЛЁНКА ============ -->
+<section class="film-section"><p class="section-kicker micro">01 / Cinema club</p>
+<h2 class="film-title" lang="en">Her film collection</h2>
+<div class="film-divider"></div>
+<p class="drag-hint">потяни плёнку вправо →</p>
+<div aria-label="Киноплёнка: потяни вправо, затем прокрути кадры" class="film-track" id="filmTrack" tabindex="0">
+<div class="film-strip" id="filmStrip">
+<div class="film-frames">
+<div aria-label="О фильме: Вечность" class="frame" data-film="1" role="button" tabindex="0">
+<img alt="" src="film11.jpg"/>
+<span class="frame-title">Вечность</span>
+</div>
+<div aria-label="О фильме: Энн с двумя Н" class="frame" data-film="2" role="button" tabindex="0">
+<img alt="" src="film22.jpg"/>
+<span class="frame-title">Энн с двумя Н</span>
+</div>
+<div aria-label="О фильме: Хороший доктор" class="frame" data-film="3" role="button" tabindex="0">
+<img alt="" src="film33.jpg"/>
+<span class="frame-title">Хороший доктор</span>
+</div>
+<div aria-label="О мультике: Время приключений" class="frame" data-film="4" role="button" tabindex="0">
+<img alt="" src="film44.jpg"/>
+<span class="frame-title">Время приключений</span>
+</div>
+<div aria-label="О фильме: Дневник памяти" class="frame" data-film="5" role="button" tabindex="0">
+<img alt="" src="film55.jpg"/>
+<span class="frame-title">Дневник памяти</span>
+</div>
+<div aria-label="О фильме: Проект "Аве Мария" " class="frame" data-film="6" role="button" tabindex="0">
+<img alt="" src="film66.jpg"/>
+<span class="frame-title">Проект "Аве Мария"</span>
+</div>
+<div aria-label="О фильме: Отчаянные домохозяйки" class="frame" data-film="7" role="button" tabindex="0">
+<img alt="" src="film77.jpg"/>
+<span class="frame-title">Отчаянные домохозяйки</span>
+</div>
+<div aria-label="О мультике: Винкс" class="frame" data-film="8" role="button" tabindex="0">
+<img alt="" src="film88.jpg"/>
+<span class="frame-title">Винкс</span>
+</div>
+</div>
+</div>
+</div><nav aria-label="Прокрутка киноплёнки" class="film-controls"><button aria-label="Предыдущие кадры" id="filmPrev" type="button">←</button><span class="micro">The film collection / 08</span><button aria-label="Следующие кадры" id="filmNext" type="button">→</button></nav>
+</section>
+<!-- ============ СЕКЦИЯ 3: ПЛЕЙЛИСТ ============ -->
+<section class="music-section"><p class="section-kicker micro">02 / On repeat</p>
+<h2 class="music-title" lang="en">Her playlist</h2>
+<div class="music-divider"></div>
+<p class="music-hint">Нажми на пластинку, чтобы увидеть обложку</p>
+<div class="vinyls">
+<div aria-label="Показать обложку пластинки 1" aria-pressed="false" class="vinyl" role="button" tabindex="0">
+<div class="vinyl-disc"></div>
+<div class="vinyl-cover">
+<img alt="" src="music1.jpg"/>
+</div>
+<span class="vinyl-label micro">Side 01</span></div>
+<div aria-label="Показать обложку пластинки 2" aria-pressed="false" class="vinyl" role="button" tabindex="0">
+<div class="vinyl-disc"></div>
+<div class="vinyl-cover">
+<img alt="" src="music2.jpg"/>
+</div>
+<span class="vinyl-label micro">Side 02</span></div>
+<div aria-label="Показать обложку пластинки 3" aria-pressed="false" class="vinyl" role="button" tabindex="0">
+<div class="vinyl-disc"></div>
+<div class="vinyl-cover">
+<img alt="" src="music3.jpg"/>
+</div>
+<span class="vinyl-label micro">Side 03</span></div>
+<div aria-label="Показать обложку пластинки 4" aria-pressed="false" class="vinyl" role="button" tabindex="0">
+<div class="vinyl-disc"></div>
+<div class="vinyl-cover">
+<img alt="" src="music4.jpg"/>
+</div>
+<span class="vinyl-label micro">Side 04</span></div>
+</div>
+</section>
+<!-- ============ КНОПКА НА СЛЕДУЮЩУЮ СТРАНИЦУ ============ -->
+<footer class="page-footer"><a class="micro" href="page-3.html">← Предыдущая</a><span class="folio">04</span><a class="micro" href="page-5.html">Следующая глава →</a></footer>
+</div>
+<!-- ============ ВСПЛЫВАЮЩЕЕ ОКНО ДЛЯ ФИЛЬМОВ ============ -->
+<div aria-hidden="true" class="glass-overlay" id="glassOverlay">
+<div aria-labelledby="modalTitle" aria-modal="true" class="glass-card" role="dialog" tabindex="-1">
+<button aria-label="Закрыть описание фильма" class="close-btn" id="closeBtn" type="button">×</button>
+<div class="film-cover">
+<img alt="" id="modalImage" src=""/>
+</div>
+<h3 id="modalTitle">Название фильма</h3>
+<p class="film-year" id="modalYear">2024 · режиссёр</p>
+<p class="film-description" id="modalDescription">
+                Описание фильма.
+            </p>
+</div>
+</div>
+<!-- ============ СКРИПТ ============ -->
+<script>
+                /* ----- VIBE CIRCLE ----- */
+                const vibeCircle = document.getElementById('vibeCircle');
+                const vibeCenter = document.getElementById('vibeCenter');
+
+                vibeCenter.addEventListener('click', () => {
+                    vibeCenter.classList.remove('pressed');
+                    void vibeCenter.offsetWidth;
+                    vibeCenter.classList.add('pressed');
+                    const open = vibeCircle.classList.toggle('open');
+                    vibeCenter.setAttribute('aria-expanded', String(open));
+                    vibeCenter.setAttribute('aria-label', open ? 'Свернуть фотографии' : 'Раскрыть фотографии');
+                });
+
+                /* ----- FILM TRACK ----- */
+                const filmTrack = document.getElementById('filmTrack');
+                const filmStrip = document.getElementById('filmStrip');
+
+                const MIN_WIDTH = Math.min(300, filmTrack.clientWidth);
+                let MAX_WIDTH = filmTrack.clientWidth;
+
+                let isDragging = false;
+                let startX = 0;
+                let startWidth = MIN_WIDTH;
+                let dragDistance = 0;
+
+                filmTrack.addEventListener('mousedown', startDrag);
+                filmTrack.addEventListener('touchstart', startDrag, { passive: true });
+
+                function startDrag(e) {
+                    isDragging = true;
+                    dragDistance = 0;
+                    filmTrack.classList.add('dragging');
+                    startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                    startWidth = filmStrip.offsetWidth;
+                    document.body.style.cursor = 'grabbing';
+                }
+
+                document.addEventListener('mousemove', onDrag);
+                document.addEventListener('touchmove', onDrag, { passive: true });
+
+                function onDrag(e) {
+                    if (!isDragging) return;
+
+                    const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                    const delta = clientX - startX;
+                    dragDistance = Math.max(dragDistance, Math.abs(delta));
+                    let newWidth = startWidth + delta;
+
+                    if (newWidth < MIN_WIDTH) newWidth = MIN_WIDTH;
+                    if (newWidth > MAX_WIDTH) newWidth = MAX_WIDTH;
+
+                    filmStrip.style.width = newWidth + 'px';
+                }
+
+                document.addEventListener('mouseup', stopDrag);
+                document.addEventListener('touchend', stopDrag);
+
+                function stopDrag() {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    filmTrack.classList.remove('dragging');
+                    document.body.style.cursor = '';
+                }
+
+                window.addEventListener('resize', () => {
+                    MAX_WIDTH = filmTrack.clientWidth;
+                    filmStrip.style.width = Math.min(filmStrip.offsetWidth, MAX_WIDTH) + 'px';
+                });
+
+                /* ----- FILM DATA ----- */
+                const filmsData = {
+                    '1': {
+                        title: 'Вечность',
+                        year: '2014–2015',
+                        image: 'film1.jpg',
+                        description: 'Генри Морган выглядит как обычный судмедэксперт из Нью-Йорка, но на самом деле он живёт уже более 200 лет и не может умереть. Каждый раз, погибая, он возвращается к жизни в ближайшем водоёме. Вместе с другом Эйбом, который знает его тайну, Генри пытается понять причину своего бессмертия, а параллельно помогает полиции расследовать запутанные убийства, используя опыт, накопленный за столетия . Сериал сочетает детектив в духе «Менталиста» с мистической драмой о человеке, который слишком долго живёт .'
+                    },
+                    '2': {
+                        title: 'Энн с двумя Н',
+                        year: 'Anne, 2017–2019',
+                        image: 'film2.jpg',
+                        description: 'Экранизация классического романа Люси Мод Монтгомери «Энн из Зелёных Крыш». Тринадцатилетняя сирота Энн по ошибке попадает в семью пожилых брата и сестры на острове Принца Эдуарда — и меняет их жизнь, а они меняют её. Это светлый, добрый сериал о взрослении, воображении и поиске своего места в мире, с красивыми пейзажами и атмосферой XIX века . Стоит учесть: второй сезон заметно смещает фокус в сторону современных социальных тем, что нравится не всем зрителям .'
+                    },
+                    '3': {
+                        title: 'Хороший доктор',
+                        year: 'The Good Doctor, 2017–2024',
+                        image: 'film3.jpg',
+                        description: 'Медицинская драма о молодом хирурге Шоне Мерфи, у которого синдром саванта (форма аутизма с выдающимися способностями в одной области). Шон гениально диагностирует пациентов и чувствует «поломки» в организме, но с трудом понимает эмоции и социальные правила. Сериал — о том, как он доказывает коллегам свою состоятельность и учится жить в мире, который не всегда готов его принять . Ремейк южнокорейской дорамы, известен также по роли Фредди Хаймора .'
+                    },
+                    '4': {
+                        title: 'Время приключений',
+                        year: 'Adventure Time, 2010–2018',
+                        image: 'film4.jpg',
+                        description: 'Финн, мальчик-искатель приключений, и его лучший друг Джейк, волшебный пёс, способный менять форму, живут в постапокалиптическом мире Ууу. Они исследуют подземелья, сражаются с монстрами, помогают жителям и поют абсурдно-весёлые песни. За внешней простотой и кислотной фантазией скрывается история о дружбе, взрослении и странном мире, который герои делают чуть лучше .'
+                    },
+                    '5': {
+                        title: 'Дневник памяти',
+                        year: 'The Notebook, 2004',
+                        image: 'film5.jpg',
+                        description: 'Романтическая драма по роману Николаса Спаркса. В доме престарелых пожилой мужчина читает женщине с болезнью Альцгеймера историю из потрёпанного дневника — о любви между бедным парнем Ноем и богатой девушкой Элли в 1940-х, о разлуке, войне и выборе, который приходится делать, когда прошлое возвращается . Один из самых известных фильмов жанра, во многом благодаря химии Райана Гослинга и Рэйчел Макадамс.'
+                    },
+                    '6': {
+                        title: 'Проект „Аве Мария“',
+                        year: 'Project Hail Mary, 2026',
+                        image: 'film6.jpg',
+                        description: 'Научно-фантастический фильм по роману Энди Уира (автора «Марсианина»). Учитель биологии Райленд Грейс приходит в себя на космическом корабле и не помнит ни себя, ни миссию. Постепенно он понимает, что остался единственным выжившим из экипажа, отправленного спасать человечество, а его единственный помощник — инопланетянин, общающийся посредством музыки . Главную роль исполнил Райан Гослинг, режиссёры — Фил Лорд и Кристофер Миллер («Человек-паук: Через вселенные») .'
+                    },
+                    '7': {
+                        title: 'Отчаянные домохозяйки',
+                        year: 'Desperate Housewives, 2004–2012',
+                        image: 'film7.jpeg',
+                        description: 'Сериал — о том, как отчаянно женщины ищут счастья, любви и себя, а заодно пытаются не утонуть в собственных скелетах в шкафу. Помню, что Ярику этот сериал нравится, но по вайбу — он подходит и тебе.'
+                    },
+                    '8': {
+                        title: 'Винкс',
+                        year: 'Winx Club, 2004–2019',
+                        image: 'film8.jpeg',
+                        description: 'Хз. Ну ты Муза однозначно'
+                    }
+                };
+
+                /* ----- FILM MODAL ----- */
+                const glassOverlay = document.getElementById('glassOverlay');
+                const modalImage = document.getElementById('modalImage');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalYear = document.getElementById('modalYear');
+                const modalDescription = document.getElementById('modalDescription');
+                const closeBtn = document.getElementById('closeBtn');
+
+                document.querySelectorAll('.frame').forEach(frame => {
+                    frame.addEventListener('click', () => {
+                        if (isDragging || dragDistance > 5) { dragDistance = 0; return; }
+
+                        const filmId = frame.getAttribute('data-film');
+                        const film = filmsData[filmId];
+
+                        if (film) {
+                            modalImage.src = film.image;
+                            modalTitle.textContent = film.title;
+                            modalYear.textContent = film.year;
+                            modalDescription.textContent = film.description;
+
+                            glassOverlay.classList.add('show');
+                            glassOverlay.setAttribute('aria-hidden', 'false');
+                            frame.setAttribute('data-modal-return', 'true');
+                            closeBtn.focus();
+                        }
+                    });
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    closeFilmModal();
+                });
+
+                glassOverlay.addEventListener('click', (e) => {
+                    if (e.target === glassOverlay) closeFilmModal();
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        closeFilmModal();
+                    }
+                });
+    
+                function closeFilmModal() {
+                    glassOverlay.classList.remove('show');
+                    glassOverlay.setAttribute('aria-hidden', 'true');
+                    const previous = document.querySelector('[data-modal-return]');
+                    if (previous) { previous.removeAttribute('data-modal-return'); previous.focus(); }
+                }
+                document.querySelectorAll('.frame').forEach(frame => frame.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); frame.click(); }
+                }));
+                document.querySelectorAll('.vinyl').forEach(vinyl => {
+                    const toggle = () => { const active = vinyl.classList.toggle('active'); vinyl.setAttribute('aria-pressed', String(active)); };
+                    vinyl.addEventListener('click', toggle);
+                    vinyl.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); } });
+                });
+                function moveFilm(direction) {
+                    filmStrip.style.width = filmTrack.clientWidth + 'px';
+                    const distance = Math.max(160, filmTrack.clientWidth * .65);
+                    filmStrip.scrollBy({left: direction * distance, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+                }
+                document.getElementById('filmPrev').addEventListener('click', () => moveFilm(-1));
+                document.getElementById('filmNext').addEventListener('click', () => moveFilm(1));
+                filmTrack.addEventListener('keydown', event => { if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); moveFilm(event.key === 'ArrowRight' ? 1 : -1); } });
+                // Neutral built-in placeholders only when an original image is unavailable.
+                const placeholder = (label, index) => {
+                    const tones = ['#b7b2a1','#a4a99b','#8b7971','#b7a386'];
+                    const tone = tones[index % tones.length];
+                    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="520" viewBox="0 0 400 520"><rect width="400" height="520" fill="${tone}"/><ellipse cx="290" cy="300" rx="160" ry="310" fill="none" stroke="#eee9df" stroke-opacity=".3" transform="rotate(30 290 300)"/><text x="200" y="300" text-anchor="middle" fill="#eee9df" font-family="Georgia,serif" font-style="italic" font-size="94">${label}</text><text x="24" y="485" fill="#eee9df" font-family="Arial,sans-serif" font-size="11" letter-spacing="3">BIRTHDAY / ISSUE 19</text></svg>`;
+                    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+                };
+                document.querySelectorAll('img').forEach((img,index) => {
+                    const fallback = () => { if (!img.src.startsWith('data:')) img.src = placeholder(img.classList.contains('vibe-photo') ? String(index+1).padStart(2,'0') : 'S', index); };
+                    img.addEventListener('error', fallback);
+                    if (img.getAttribute('src') && img.complete && img.naturalWidth === 0) fallback();
+                });
+</script>
+</body>
+</html>
